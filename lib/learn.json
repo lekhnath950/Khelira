@@ -9,12 +9,6 @@
                 "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>My First Page</title>\n  </head>\n  <body>\n    Hello World!\n  </body>\n</html>"
             },
             {
-                "level": 2,
-                "title": "Headings",
-                "description": "Headings are like **titles** in a book. HTML has 6 heading sizes: `<h1>` is the biggest and `<h6>` is the smallest.",
-                "example": "<h1>This is Heading 1</h1>\n<h2>This is Heading 2</h2>\n<h6>This is Heading 6</h6>"
-            },
-            {
                 "level": 3,
                 "title": "Paragraphs",
                 "description": "Paragraphs are blocks of text. Use `<p>` tag to write them.",
