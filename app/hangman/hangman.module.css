@@ -1,0 +1,2 @@
+.wrap { padding: 2rem 0; text-align: center; }
+.badge { display:inline-block; border:1px dashed var(--accent-2); color:var(--accent-2); padding:.25rem .5rem; border-radius:999px; }

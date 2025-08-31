@@ -1,0 +1,4 @@
+.wrap { padding: 1.5rem 0; }
+.rule { border-left: 3px solid var(--accent); padding-left: .75rem; margin-bottom: 1rem; }
+.dl dt { color: var(--accent); margin-top:.75rem; }
+.dl dd { margin: .25rem 0 .5rem 0; color: var(--muted); }

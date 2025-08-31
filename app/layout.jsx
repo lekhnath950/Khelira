@@ -1,0 +1,35 @@
+// import "./globals.css";
+import "../styles/globals.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+export const metadata = {
+  metadataBase: new URL("https://khelira.com"),
+  title: {
+    default: "Khelira — Play Minimal, Win Big",
+    template: "%s | Khelira"
+  },
+  description: "Khelira (खेलिरा) — a modern, dark, minimalist playground for web games and experiments.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Khelira — Play Minimal, Win Big",
+    description: "A visually memorable gaming site with modern dark theme.",
+    url: "https://khelira.com",
+    siteName: "Khelira",
+    images: [{ url: "/logo.svg", width: 256, height: 256 }],
+    locale: "en_US",
+    type: "website",
+  }
+};
+
+export default function RootLayout({ children }){
+  return (
+    <html lang="en">
+      <body>
+        <Navbar />
+        <main id="main" className="container">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

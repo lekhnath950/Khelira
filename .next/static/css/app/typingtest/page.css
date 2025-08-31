@@ -1,0 +1,356 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/typingtest/typingtest.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.typingtest_wrap__1Jzr5 {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.typingtest_badge__Q_Oj2 {
+    display: inline-block;
+    border: 1px dashed var(--accent);
+    color: var(--accent);
+    padding: .25rem .5rem;
+    border-radius: 999px;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./styles/globals.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --bg: #0b0f1a;
+  --bg-elev: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8; /* cyan-400 */
+  --accent-2: #f472b6; /* pink-400 */
+  --border: #1f2937;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+.container { width: min(1200px, 92%); margin-inline: auto; }
+.btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-elev), #0b1225);
+  color: var(--text);
+  border-radius: 10px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(56,189,248,0.1); }
+.btn-accent { border-color: var(--accent); }
+.grid {
+  display: grid;
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+/* Parallax hero helper */
+.parallax {
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Skip link */
+.skip-link {
+  position: absolute; left: -999px; top: -999px;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; z-index: 9999;
+  background: var(--accent); color: #001018; padding: .5rem .75rem; border-radius: 8px;
+}
+footer { border-top: 1px solid var(--border); }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/TypingTestModule.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+/* .container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  font-family: monospace;
+}
+
+.setup {
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 2px #0ff;
+}
+
+.controls select,
+.controls button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.testArea {
+  margin-top: 20px;
+}
+
+
+
+.words {
+    font-size: 20px;
+    line-height: 2;
+    background: #222;
+    padding: 15px;
+    border-radius: 12px;
+    color: #aaa;
+    overflow: scroll;
+    height: 200px; 
+}
+
+.correct {
+  color: #0f0;
+}
+.incorrect {
+  color: #f33;
+}
+.active {
+  background: #444;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.upcoming {
+  color: #555;
+}
+
+.input {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 2px solid #0ff;
+  outline: none;
+  background: #111;
+  color: #0ff;
+}
+
+.stats {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.progress {
+  height: 10px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.progressBar {
+  height: 10px;
+  background: linear-gradient(90deg, #0ff, #00f);
+  border-radius: 8px;
+  transition: width 1s linear;
+}
+
+.endBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #f33;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.resultPage {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.currentResult {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.historyList {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.historyList li {
+  margin: 5px 0;
+  padding: 8px;
+  background: #1c1c1c;
+  border-radius: 8px;
+} 
+ */
+
+
+
+
+
+
+
+
+
+
+.TypingTestModule_container__E7zX2 {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  font-family: monospace;
+}
+
+.TypingTestModule_setup__hxkMj {
+  /* background: #1a1a1a; */
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 2px #0ff;
+}
+
+.TypingTestModule_controls__DzH79 select,
+.TypingTestModule_controls__DzH79 button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.TypingTestModule_testArea__mGx9I {
+  margin-top: 20px;
+}
+
+.TypingTestModule_words__0O_0u {
+    font-size: 20px;
+    line-height: 2;
+    background: #222;
+    padding: 15px;
+    border-radius: 12px;
+    color: #aaa;
+    overflow: scroll;
+    height: 200px;
+    white-space: pre-wrap; /* Important for word wrapping */
+}
+
+.TypingTestModule_correct__GkTb_ {
+  color: rgb(0, 0, 0);
+}
+/* .incorrect {
+  color: #f33;
+} */
+.TypingTestModule_active__Dxb9x {
+  background: #444;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.TypingTestModule_upcoming__B4tAy {
+  color: #555;
+}
+
+/* NEW CSS CLASSES */
+.TypingTestModule_charCorrect__h4fyV {
+    color: #0f0;
+}
+.TypingTestModule_charIncorrect__Kd_rq {
+    color: #f33;
+}
+.TypingTestModule_activeChar__fFFaW {
+    /* This creates the cursor-like effect */
+    border-right: 2px solid #fff;
+}
+.TypingTestModule_completed__VI8Oy {
+  color: #8d8d8d; /* Styling for completed words */
+}
+
+.TypingTestModule_input___4DOp {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 2px solid #0ff;
+  outline: none;
+  background: #111;
+  color: #0ff;
+}
+
+.TypingTestModule_stats__Fd_Us {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.TypingTestModule_progress__E_tTh {
+  height: 10px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.TypingTestModule_progressBar__ybt_d {
+  height: 10px;
+  background: linear-gradient(90deg, #0ff, #00f);
+  border-radius: 8px;
+  transition: width 1s linear;
+}
+
+.TypingTestModule_endBtn__9FWXX {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #f33;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.TypingTestModule_resultPage__2k27_ {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.TypingTestModule_currentResult__Iig_h {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.TypingTestModule_historyList__QnfWB {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.TypingTestModule_historyList__QnfWB li {
+  margin: 5px 0;
+  padding: 8px;
+  background: #1c1c1c;
+  border-radius: 8px;
+}

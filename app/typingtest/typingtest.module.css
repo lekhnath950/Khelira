@@ -1,0 +1,12 @@
+.wrap {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px dashed var(--accent);
+    color: var(--accent);
+    padding: .25rem .5rem;
+    border-radius: 999px;
+}

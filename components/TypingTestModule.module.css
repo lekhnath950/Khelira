@@ -1,0 +1,280 @@
+/* .container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  font-family: monospace;
+}
+
+.setup {
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 2px #0ff;
+}
+
+.controls select,
+.controls button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.testArea {
+  margin-top: 20px;
+}
+
+
+
+.words {
+    font-size: 20px;
+    line-height: 2;
+    background: #222;
+    padding: 15px;
+    border-radius: 12px;
+    color: #aaa;
+    overflow: scroll;
+    height: 200px; 
+}
+
+.correct {
+  color: #0f0;
+}
+.incorrect {
+  color: #f33;
+}
+.active {
+  background: #444;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.upcoming {
+  color: #555;
+}
+
+.input {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 2px solid #0ff;
+  outline: none;
+  background: #111;
+  color: #0ff;
+}
+
+.stats {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.progress {
+  height: 10px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.progressBar {
+  height: 10px;
+  background: linear-gradient(90deg, #0ff, #00f);
+  border-radius: 8px;
+  transition: width 1s linear;
+}
+
+.endBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #f33;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.resultPage {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.currentResult {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.historyList {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.historyList li {
+  margin: 5px 0;
+  padding: 8px;
+  background: #1c1c1c;
+  border-radius: 8px;
+} 
+ */
+
+
+
+
+
+
+
+
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  font-family: monospace;
+}
+
+.setup {
+  /* background: #1a1a1a; */
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 2px #0ff;
+}
+
+.controls select,
+.controls button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.testArea {
+  margin-top: 20px;
+}
+
+.words {
+    font-size: 20px;
+    line-height: 2;
+    background: #222;
+    padding: 15px;
+    border-radius: 12px;
+    color: #aaa;
+    overflow: scroll;
+    height: 200px;
+    white-space: pre-wrap; /* Important for word wrapping */
+}
+
+.correct {
+  color: rgb(0, 0, 0);
+}
+/* .incorrect {
+  color: #f33;
+} */
+.active {
+  background: #444;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.upcoming {
+  color: #555;
+}
+
+/* NEW CSS CLASSES */
+.charCorrect {
+    color: #0f0;
+}
+.charIncorrect {
+    color: #f33;
+}
+.activeChar {
+    /* This creates the cursor-like effect */
+    border-right: 2px solid #fff;
+}
+.completed {
+  color: #8d8d8d; /* Styling for completed words */
+}
+
+.input {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 2px solid #0ff;
+  outline: none;
+  background: #111;
+  color: #0ff;
+}
+
+.stats {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.progress {
+  height: 10px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.progressBar {
+  height: 10px;
+  background: linear-gradient(90deg, #0ff, #00f);
+  border-radius: 8px;
+  transition: width 1s linear;
+}
+
+.endBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #f33;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.resultPage {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.currentResult {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.historyList {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.historyList li {
+  margin: 5px 0;
+  padding: 8px;
+  background: #1c1c1c;
+  border-radius: 8px;
+}
