@@ -20,14 +20,6 @@ export default function Footer(){
             </ul>
           </div>
           <div className={styles.col}>
-            <h4>Community</h4>
-            <ul>
-              <li><a href="/chat">Forums</a></li>
-              <li><a href="/leaderboards">Leaderboards</a></li>
-              <li><a href="/achievements">Achievements</a></li>
-            </ul>
-          </div>
-          <div className={styles.col}>
             <h4>Connect</h4>
             <p>
               <a href="https://github.com" aria-label="GitHub"><FaGithub aria-hidden="true" /></a>

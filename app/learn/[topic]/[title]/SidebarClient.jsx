@@ -1,11 +1,14 @@
+
+// components/Sidebar.js
+
 "use client";
 import { useState } from "react";
 import learnData from "../../../../lib/learn.json";
 import styles from "../../learn.module.css";
 import { slugify } from "@/utils/slugify";
 
-export default function Sidebar({ topic, currentTitle, levels }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+// This is the main component that renders the sidebar and its content.
+export function SidebarContent({ topic, currentTitle, levels, onTopicClick }) {
   const [query, setQuery] = useState("");
 
   const allLessons = Object.entries(learnData).flatMap(([key, val]) =>
@@ -24,14 +27,7 @@ export default function Sidebar({ topic, currentTitle, levels }) {
   );
 
   return (
-    <aside className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
-      <button
-        className={styles.toggleSidebarBtn}
-        onClick={() => setSidebarOpen(!sidebarOpen)}
-      >
-        {sidebarOpen ? "Hide Menu" : "Show Menu"}
-      </button>
-
+    <>
       <button
         className={styles.allTopicsBtn}
         onClick={() => (window.location.href = "/learn")}
@@ -96,6 +92,25 @@ export default function Sidebar({ topic, currentTitle, levels }) {
           )}
         </div>
       )}
-    </aside>
+    </>
+  );
+}
+
+// This is the wrapper component for the sidebar logic and toggle button.
+export default function SidebarWrapper({ topic, currentTitle, levels }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        className={styles.toggleSidebarBtn}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        {sidebarOpen ? "Hide Menu" : "Show Menu"}
+      </button>
+      <aside className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
+        <SidebarContent topic={topic} currentTitle={currentTitle} levels={levels} />
+      </aside>
+    </>
   );
 }

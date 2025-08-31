@@ -3,11 +3,25 @@
   grid-template-columns: 240px 1fr;
   gap: 1.5rem;
   margin: 2rem 0;
+  padding: 0 1rem;
 }
+
+.content {
+  padding: 0 1rem;
+}
+
+/*==================================*/
+/* Sidebar Styles */
+/*==================================*/
 
 .sidebar {
   border-right: 1px solid var(--border);
   padding-right: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  position: sticky;
+  top: 1rem;
+  padding-left: 1rem;
 }
 
 .sidebar h3 {
@@ -17,127 +31,56 @@
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.sidebar button {
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
   display: block;
   width: 100%;
-  padding: .5rem;
   text-align: left;
-  border: none;
+  padding: 0.5rem;
+  text-decoration: none;
   background: none;
   color: var(--muted);
   cursor: pointer;
+  border-radius: 6px;
 }
-.sidebar button:hover {
+
+.sidebar a:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.activeLesson {
+  font-weight: bold;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/*==================================*/
+/* Sidebar Controls & Search */
+/*==================================*/
+
+.allTopicsBtn, .toggleSidebarBtn {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-elev);
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
+}
+
+.allTopicsBtn:hover, .toggleSidebarBtn:hover {
+  border-color: var(--accent);
   color: var(--accent);
 }
-
-.content h1 {
-  margin-bottom: 1rem;
-}
-
-.learnHome{
-    padding: 10px;
-}
-
-.codeBlock {
-  background: #0f172a;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-  overflow-x: auto;
-}
-
-.navButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
-
-.navButtons button {
-  padding: .5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
-  cursor: pointer;
-}
-.navButtons button:hover {
-  border-color: var(--accent);
-}
-
-.topicGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.topicCard {
-  border: 1px solid var(--border);
-  padding: 1rem;
-  border-radius: 12px;
-  background: #0f172a;
-  transition: transform .2s ease, border-color .2s ease;
-}
-.topicCard:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-
-@media (max-width: 900px) {
-  .learnWrapper {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1rem;
-  }
-}
-
-
-.searchBox {
-  margin: 1rem 0;
-}
-
-.searchBox input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #0f172a;
-  color: var(--text);
-  font-size: 1rem;
-}
-
-.searchBox input:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-.resultList {
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-  margin-top: 1rem;
-}
-
-.resultItem {
-  padding: .75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #0f172a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: border-color .2s ease, transform .2s ease;
-}
-
-.resultItem:hover {
-  border-color: var(--accent);
-  transform: translateX(4px);
-}
-
 
 .searchInput {
   width: 100%;
@@ -154,42 +97,8 @@
   border-color: var(--accent);
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin-bottom: 0.5rem;
-}
-
-.sidebar button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem;
-  border: none;
-  background: none;
-  color: var(--muted);
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.sidebar button:hover {
-  color: var(--accent);
-  background: rgba(255,255,255,0.05);
-}
-
-.activeLesson {
-  font-weight: bold;
-  color: var(--accent);
-  background: rgba(255,255,255,0.1);
-}
-
-
-.allTopicsBtn {
-  width: 100%;
+.searchBox{
+    width: 100%;
   padding: 0.6rem;
   margin-bottom: 1rem;
   border: 1px solid var(--border);
@@ -197,46 +106,42 @@
   background: var(--bg-elev);
   color: var(--text);
   cursor: pointer;
+  text-align: center;
 }
-.allTopicsBtn:hover {
+
+.searchBox input {
+  width: 100%;
+  border: 0px solid grey;
+  background-color: transparent;
+  outline:none;
+}
+
+.resultList {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.resultItem {
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.resultItem:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  transform: translateX(4px);
 }
 
-.otherTopics {
-  margin-top: 2rem;
-}
-
-.otherTopics h4 {
-  margin-bottom: 0.5rem;
-}
-
-.otherTopics ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.otherTopics li {
-  margin-bottom: 0.4rem;
-}
-
-.otherTopics button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--muted);
-  padding: 0.3rem 0;
-}
-.otherTopics button:hover {
-  color: var(--accent);
-}
-
-.navButtons button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
+/*==================================*/
+/* Main Content & Navigation */
+/*==================================*/
 
 .breadcrumb {
   display: flex;
@@ -247,15 +152,11 @@
   color: var(--muted);
 }
 
-.breadcrumb button {
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--text);
-  cursor: pointer;
+.breadcrumb a {
+  color: var(--muted);
 }
 
-.breadcrumb button:hover {
+.breadcrumb a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
@@ -263,57 +164,152 @@
 .currentCrumb {
   font-weight: bold;
   color: var(--accent);
+  text-decoration: none;
 }
 
+.codeBlock {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.navButtons a,
+.navButtons button {
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color .2s ease;
+}
+
+.navButtons a:hover,
+.navButtons button:hover {
+  border-color: var(--accent);
+}
+
+.navButtons .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/*==================================*/
+/* Topic Grid (for home page) */
+/*==================================*/
+
+.topicGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.topicCard {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 12px;
+  background: #0f172a;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.topicCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/*==================================*/
+/* Mobile-Specific Styles */
+/*==================================*/
 
 @media (max-width: 900px) {
   .learnWrapper {
     grid-template-columns: 1fr;
+    gap: 0;
   }
-
+  
   .sidebar {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1rem;
-    max-height: unset;
-    overflow-y: visible;
-    position: static;
-    display: none; /* hidden by default in mobile */
+    /* Hide by default on mobile */
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 250px;
+    background: var(--bg-body);
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    max-height: 100vh;
+    padding-left: 1rem;
   }
-
+  
   .sidebar.open {
-    display: block; /* when user clicks toggle */
+    transform: translateX(0);
+    background-color: #0f172a !important;
   }
-
+  
   .toggleSidebarBtn {
     display: block;
-    margin-bottom: 1rem;
-    padding: 0.6rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    position: fixed;
+    /* top: 1rem; */
+    margin-top: auto;
+    right: 1rem;
+    z-index: 10;
     background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
     color: var(--text);
-    cursor: pointer;
+    width: max-content;
   }
 
-  .toggleSidebarBtn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+  .content {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .allTopicsBtn {
+    display: block;
+    width: auto;
+  }
+
+  /* To cover the main content when sidebar is open */
+  .learnWrapper.overlay::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
 }
 
 @media (min-width: 901px) {
   .toggleSidebarBtn {
-    display: none; /* only show button in mobile */
+    display: none;
   }
-}
 
-
-.sidebar {
-  border-right: 1px solid var(--border);
-  padding-right: 1rem;
-  max-height: calc(100vh - 2rem); /* full viewport height */
-  overflow-y: auto; /* make it scrollable */
-  position: sticky;
-  top: 1rem; /* stays visible while scrolling */
+  .sidebar {
+    display: block;
+    transform: none;
+    position: sticky;
+  }
 }

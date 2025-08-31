@@ -1,0 +1,88 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/home/home.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.home_hero__CH0pQ {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-elev), #0b1225);
+}
+.home_heroInner__zTFwy { display: grid; grid-template-columns: 1.2fr 1fr; grid-gap: 1rem; gap: 1rem; padding: 2rem; }
+.home_heroCopy__4IveG h1 { font-size: clamp(2rem, 3.8vw, 3rem); margin: 0 0 .5rem; }
+.home_heroCopy__4IveG p { color: var(--muted); margin: 0 0 1rem; }
+.home_heroActions__u_P4A { display: flex; gap: .75rem; flex-wrap: wrap; }
+.home_heroMedia__2uS9N { min-height: 260px; border-radius: 12px; overflow: hidden; }
+.home_heroMediaInner__jWvFG { height: 100%; width: 100%; }
+.home_heroParallax__RfXtq { height: 100%; width: 100%; }
+.home_cards__IV9eq { margin: 2rem 0; }
+.home_card__tGs61 {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  background: #0f172a;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.home_card__tGs61:hover { transform: translateY(-4px); border-color: var(--accent); }
+@media (max-width: 900px){
+  .home_heroInner__zTFwy { grid-template-columns: 1fr; }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./styles/globals.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --bg: #0b0f1a;
+  --bg-elev: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8; /* cyan-400 */
+  --accent-2: #f472b6; /* pink-400 */
+  --border: #1f2937;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+.container { width: min(1200px, 92%); margin-inline: auto; }
+.btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-elev), #0b1225);
+  color: var(--text);
+  border-radius: 10px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(56,189,248,0.1); }
+.btn-accent { border-color: var(--accent); }
+.grid {
+  display: grid;
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+/* Parallax hero helper */
+.parallax {
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Skip link */
+.skip-link {
+  position: absolute; left: -999px; top: -999px;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; z-index: 9999;
+  background: var(--accent); color: #001018; padding: .5rem .75rem; border-radius: 8px;
+}
+footer { border-top: 1px solid var(--border); }
+
