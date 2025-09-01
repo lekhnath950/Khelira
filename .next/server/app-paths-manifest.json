@@ -1,7 +1,19 @@
 {
-  "/learn/page": "app/learn/page.js",
-  "/page": "app/page.js",
-  "/learn/[topic]/[title]/page": "app/learn/[topic]/[title]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
   "/gamerules/page": "app/gamerules/page.js",
-  "/projects/page": "app/projects/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/achievements/page": "app/achievements/page.js",
+  "/leaderboards/page": "app/leaderboards/page.js",
+  "/account/page": "app/account/page.js",
+  "/chat/page": "app/chat/page.js",
+  "/hangman/page": "app/hangman/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/home/page": "app/home/page.js",
+  "/page": "app/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/vrar/page": "app/vrar/page.js",
+  "/typingtest/page": "app/typingtest/page.js",
+  "/result/page": "app/result/page.js",
+  "/learn/[topic]/[title]/page": "app/learn/[topic]/[title]/page.js"
 }

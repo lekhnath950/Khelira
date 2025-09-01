@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[929],{2776:(_,a,e)=>{Promise.resolve().then(e.t.bind(e,6991,23))},6991:_=>{_.exports={wrap:"chat_wrap__w1Jxq",card:"chat_card__h56RQ"}}},_=>{var a=a=>_(_.s=a);_.O(0,[144,130,215,744],()=>a(2776)),_N_E=_.O()}]);
