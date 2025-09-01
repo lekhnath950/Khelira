@@ -46,7 +46,7 @@ export function SidebarContent({ topic, currentTitle, levels, onTopicClick }) {
       {query === "" ? (
         <>
           <h3>{learnData[topic].title}</h3>
-          <ul>
+          <ul className="topic-title">
             {levels.map((lvl) => (
               <li key={lvl.level}>
                 <a
@@ -61,7 +61,7 @@ export function SidebarContent({ topic, currentTitle, levels, onTopicClick }) {
 
           <div className={styles.otherTopics}>
             <h4>Other Topics</h4>
-            <ul>
+            <ul className="otherT">
               {Object.entries(learnData)
                 .filter(([key]) => key !== topic)
                 .map(([key, val]) => (

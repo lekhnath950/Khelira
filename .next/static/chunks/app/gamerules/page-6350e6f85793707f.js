@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[338],{3807:(e,_,r)=>{Promise.resolve().then(r.t.bind(r,8438,23)),Promise.resolve().then(r.t.bind(r,231,23))},8438:e=>{e.exports={wrap:"gamerules_wrap__h0V3X",rule:"gamerules_rule__Teu_a",dl:"gamerules_dl__P61Ek"}}},e=>{var _=_=>e(e.s=_);e.O(0,[722,231,130,215,744],()=>_(3807)),_N_E=e.O()}]);

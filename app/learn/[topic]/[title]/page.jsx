@@ -44,7 +44,7 @@ export default async function LessonPage({ params }) {
         <nav className={styles.breadcrumb}>
           <a href="/learn">Learn</a>
           <span>›</span>
-          <a href={`/learn/${topic}/${slugify(levels[0].title)}`}>
+          <a href={`/learn/${topic}/`}>
             {topicData.title}
           </a>
           <span>›</span>

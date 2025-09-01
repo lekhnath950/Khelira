@@ -32,9 +32,9 @@ export default function Home(){
               <Link className="btn btn-accent" href="/learn">Try Learn &nbsp; <FaBookOpenReader aria-hidden="true"/></Link>
             </div>
           </div>
-          <div className={styles.heroMedia}>
+          {/* <div className={styles.heroMedia}>
             <div className={`parallax ${styles.heroParallax}`} role="img" aria-label="Abstract gaming background"></div>
-          </div>
+          </div> */}
         </div>
       </section>
 
