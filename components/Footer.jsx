@@ -1,11 +1,18 @@
 import styles from "./Footer.module.css";
 import '../styles/globals.css';
 import { FaGithub, FaXTwitter, FaGlobe } from "react-icons/fa6";
+import AdUnit from "./AdUnit";
 
 export default function Footer(){
   return (
+<>
     <footer className={styles.footer}>
       <div className="container">
+     <div className="ad-container">
+        <AdUnit slotId="8345298729" />
+      </div>
+        
+        
         <div className={styles.cols}>
           <div className={styles.col}>
             <h4>Khelira</h4>
@@ -35,5 +42,7 @@ export default function Footer(){
         </div>
       </div>
     </footer>
+
+    </>
   )
 }
