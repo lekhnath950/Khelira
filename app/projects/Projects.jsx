@@ -3,11 +3,12 @@ import '../../styles/globals.css';
 import Link from "next/link";
 import SEO from "../../components/SEO";
 import { FaKeyboard, FaPuzzlePiece } from "react-icons/fa6";
+import { SiCoursera } from "react-icons/si";
 
 const items = [
-  { href: "https://www.typing.khelira.com", title: "Typing Test", img: "/project-1.jpg", icon: <FaKeyboard />, desc: "Measure your typing speed with a clean, focused UI.", tag: "Test your skills and Practice" },
-  { href: "https://www.hangman.khelira.com", title: "Hangman", img: "/project-2.jpg", icon: <FaPuzzlePiece />, desc: "Classic guessing game with a modern vibe.", tag: "Play with fun" },
-  // { href: "/vrar", title: "VR/AR Preview", img: "/project-3.jpg", icon: <FaPuzzlePiece />, desc: "Futuristic playground for immersive demos.", tag: "Preview" },
+  { href: "https:typing.khelira.com", title: "Typing Test", img: "/project-1.jpg", icon: <FaKeyboard />, desc: "Measure your typing speed with a clean, focused UI.", tag: "Test your skills and Practice" },
+  { href: "https://hangman.khelira.com", title: "Hangman", img: "/project-2.jpg", icon: <FaPuzzlePiece />, desc: "Classic guessing game with a modern vibe.", tag: "Play with fun" },
+  { href: "https://learn.khelira.com", title: "Learn", img: "/project-2.jpg", icon: <SiCoursera />, desc: "Learn Programming Languages.", tag: "Simple Learn" }
 ];
 
 export default function Projects(){

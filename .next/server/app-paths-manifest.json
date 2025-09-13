@@ -1,7 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/learn/[topic]/page": "app/learn/[topic]/page.js",
+  "/projects/page": "app/projects/page.js",
   "/page": "app/page.js",
-  "/learn/[topic]/[title]/page": "app/learn/[topic]/[title]/page.js",
-  "/learn/page": "app/learn/page.js"
+  "/typingtest/page": "app/typingtest/page.js",
+  "/result/page": "app/result/page.js"
 }

@@ -12,9 +12,6 @@ export default function TypingTest(){
   }, []);
   return (
     <section className={styles.wrap}>
-      {/* <p className={styles.badge}><FaKeyboard aria-hidden="true" /> Coming Soon</p> */}
-      {/* <h1>Typing Test </h1> */}
-      {/* <p>Scaffold ready. The full experience is launching soon.</p> */}
     <TypingTestModule mode="normal" />
      </section>
 
