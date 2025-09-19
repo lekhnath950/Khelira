@@ -385,5 +385,1250 @@
                 "example": "// Jest test example\ntest('adds 1 + 2 to equal 3', () => {\n  expect(1 + 2).toBe(3);\n});"
             }
         ]
-    }
+    },
+    "ReactJs": {
+        "title": "ReactJs",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Introduction to React.js",
+                "description": "React.js is a popular JavaScript library for building user interfaces, especially single-page applications (SPAs). It uses a component-based architecture, where UI elements are created as reusable, independent pieces. React makes use of a virtual DOM for efficient rendering and updates, improving performance.",
+                "example": "import React from 'react';\n\nfunction App() {\n  return <h1>Hello, World!</h1>;\n}\n\nexport default App;"
+            },
+            {
+                "level": 2,
+                "title": "JSX Syntax",
+                "description": "JSX (JavaScript XML) is a syntax extension for JavaScript used in React to describe what the UI should look like. It allows you to write HTML-like code directly within JavaScript. JSX makes code more readable and expressive. It is compiled into regular JavaScript under the hood.",
+                "example": "const element = <h1>Welcome to React!</h1>;\nconsole.log(element);"
+            },
+            {
+                "level": 3,
+                "title": "Components",
+                "description": "Components are the building blocks of a React application. They can be **functional** or **class-based**. Functional components are preferred in modern React due to their simplicity and support for hooks. Each component can accept inputs called props and return JSX.",
+                "example": "function Greeting(props) {\n  return <h1>Hello, {props.name}!</h1>;\n}\n\nexport default Greeting;"
+            },
+            {
+                "level": 4,
+                "title": "Props",
+                "description": "Props (short for properties) allow data to be passed from a parent component to a child component. They are **read-only** and help make components reusable and dynamic.",
+                "example": "function Welcome(props) {\n  return <h2>Welcome, {props.user}!</h2>;\n}\n\nexport default function App() {\n  return <Welcome user=\"Alice\" />;\n}"
+            },
+            {
+                "level": 5,
+                "title": "State and useState Hook",
+                "description": "State allows components to keep track of dynamic data and re-render when that data changes. In functional components, the `useState` hook is used to manage state.",
+                "example": "import React, { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>Increase</button>\n    </div>\n  );\n}\n\nexport default Counter;"
+            },
+            {
+                "level": 6,
+                "title": "useEffect Hook",
+                "description": "`useEffect` is used to perform side effects in functional components, such as fetching data, updating the DOM, or setting up timers. It runs after the component renders.",
+                "example": "import React, { useEffect, useState } from 'react';\n\nfunction Timer() {\n  const [seconds, setSeconds] = useState(0);\n\n  useEffect(() => {\n    const interval = setInterval(() => setSeconds(sec => sec + 1), 1000);\n    return () => clearInterval(interval); // Cleanup\n  }, []);\n\n  return <p>Seconds elapsed: {seconds}</p>;\n}\n\nexport default Timer;"
+            },
+            {
+                "level": 7,
+                "title": "Handling Events",
+                "description": "React uses event handlers similar to HTML, but with camelCase syntax. Events like clicks, form submissions, or key presses are handled using functions.",
+                "example": "function Button() {\n  function handleClick() {\n    alert('Button clicked!');\n  }\n\n  return <button onClick={handleClick}>Click Me</button>;\n}\n\nexport default Button;"
+            },
+            {
+                "level": 8,
+                "title": "Conditional Rendering",
+                "description": "Conditional rendering lets you display different UI elements depending on certain conditions, using `if` statements, the ternary operator, or logical operators.",
+                "example": "function UserGreeting({ isLoggedIn }) {\n  return (\n    <div>\n      {isLoggedIn ? <h1>Welcome Back!</h1> : <h1>Please Sign In</h1>}\n    </div>\n  );\n}\n\nexport default UserGreeting;"
+            },
+            {
+                "level": 9,
+                "title": "Lists and Keys",
+                "description": "You can render lists in React by using the `map()` function. Each item should have a unique key to help React identify which items have changed, been added, or removed.",
+                "example": "function TodoList() {\n  const todos = ['Learn React', 'Build a Project', 'Get a Job'];\n  return (\n    <ul>\n      {todos.map((todo, index) => (\n        <li key={index}>{todo}</li>\n      ))}\n    </ul>\n  );\n}\n\nexport default TodoList;"
+            },
+            {
+                "level": 10,
+                "title": "React Router Basics",
+                "description": "React Router is used for adding navigation to your application. It allows you to create different routes and switch between components without reloading the page.",
+                "example": "import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';\n\nfunction Home() {\n  return <h1>Home Page</h1>;\n}\n\nfunction About() {\n  return <h1>About Page</h1>;\n}\n\nexport default function App() {\n  return (\n    <Router>\n      <nav>\n        <Link to=\"/\">Home</Link> | <Link to=\"/about\">About</Link>\n      </nav>\n      <Routes>\n        <Route path=\"/\" element={<Home />} />\n        <Route path=\"/about\" element={<About />} />\n      </Routes>\n    </Router>\n  );\n}"
+            },
+            {
+                "level": 11,
+                "title": "Context API",
+                "description": "The Context API allows you to share data across multiple components without having to pass props down manually at every level. It's ideal for global data like themes, user authentication, or settings.",
+                "example": "import React, { createContext, useState, useContext } from 'react';\n\nconst ThemeContext = createContext();\n\nfunction ThemeProvider({ children }) {\n  const [theme, setTheme] = useState('light');\n  return (\n    <ThemeContext.Provider value={{ theme, setTheme }}>\n      {children}\n    </ThemeContext.Provider>\n  );\n}\n\nfunction ThemeButton() {\n  const { theme, setTheme } = useContext(ThemeContext);\n  return (\n    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>\n      Current theme: {theme}\n    </button>\n  );\n}\n\nexport default function App() {\n  return (\n    <ThemeProvider>\n      <ThemeButton />\n    </ThemeProvider>\n  );\n}"
+            },
+            {
+                "level": 12,
+                "title": "Custom Hooks",
+                "description": "Custom hooks let you extract and reuse stateful logic across multiple components. They are regular functions whose names start with 'use'.",
+                "example": "import { useState, useEffect } from 'react';\n\nfunction useFetch(url) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetch(url)\n      .then(response => response.json())\n      .then(data => {\n        setData(data);\n        setLoading(false);\n      });\n  }, [url]);\n\n  return { data, loading };\n}\n\nexport default useFetch;"
+            },
+            {
+                "level": 13,
+                "title": "Forms and Controlled Components",
+                "description": "Controlled components are form elements like inputs and textareas that are controlled by React state. Their values are updated via state and event handlers.",
+                "example": "import React, { useState } from 'react';\n\nfunction Form() {\n  const [name, setName] = useState('');\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    alert('Submitted name: ' + name);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={name} onChange={(e) => setName(e.target.value)} />\n      <button type=\"submit\">Submit</button>\n    </form>\n  );\n}\n\nexport default Form;"
+            },
+            {
+                "level": 14,
+                "title": "Refs and useRef Hook",
+                "description": "Refs are used to directly access DOM elements or persist values across renders without causing re-renders. The `useRef` hook helps manage these references.",
+                "example": "import React, { useRef } from 'react';\n\nfunction InputFocus() {\n  const inputRef = useRef(null);\n\n  const focusInput = () => {\n    inputRef.current.focus();\n  };\n\n  return (\n    <div>\n      <input ref={inputRef} type=\"text\" />\n      <button onClick={focusInput}>Focus Input</button>\n    </div>\n  );\n}\n\nexport default InputFocus;"
+            },
+            {
+                "level": 15,
+                "title": "useMemo and useCallback",
+                "description": "React provides `useMemo` and `useCallback` hooks to optimize performance by memoizing values and functions. This prevents unnecessary recalculations and re-renders.",
+                "example": "import React, { useState, useMemo, useCallback } from 'react';\n\nfunction ExpensiveCalculation({ count }) {\n  const calculate = (num) => {\n    console.log('Calculating...');\n    return num * 2;\n  };\n\n  const result = useMemo(() => calculate(count), [count]);\n  return <p>Result: {result}</p>;\n}\n\nfunction App() {\n  const [count, setCount] = useState(0);\n  const increment = useCallback(() => setCount(c => c + 1), []);\n\n  return (\n    <div>\n      <button onClick={increment}>Increment</button>\n      <ExpensiveCalculation count={count} />\n    </div>\n  );\n}\n\nexport default App;"
+            },
+            {
+                "level": 16,
+                "title": "Error Boundaries",
+                "description": "Error boundaries catch JavaScript errors in child components and display a fallback UI instead of crashing the entire app. They must be class components.",
+                "example": "import React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError() {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, info) {\n    console.error(error, info);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h1>Something went wrong.</h1>;\n    }\n    return this.props.children;\n  }\n}\n\nexport default ErrorBoundary;"
+            },
+            {
+                "level": 17,
+                "title": "React Lazy Loading and Suspense",
+                "description": "Lazy loading lets you load components only when they are needed, improving performance. `Suspense` allows you to show a fallback UI while components are loading.",
+                "example": "import React, { Suspense, lazy } from 'react';\n\nconst LazyComponent = lazy(() => import('./LazyComponent'));\n\nfunction App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <LazyComponent />\n    </Suspense>\n  );\n}\n\nexport default App;"
+            },
+            {
+                "level": 18,
+                "title": "Performance Optimization with React.memo",
+                "description": "`React.memo` prevents a component from re-rendering unless its props have changed. This is useful for components that receive the same props frequently.",
+                "example": "import React from 'react';\n\nconst Button = React.memo(({ onClick, label }) => {\n  console.log('Rendering:', label);\n  return <button onClick={onClick}>{label}</button>;\n});\n\nexport default Button;"
+            },
+            {
+                "level": 19,
+                "title": "React Portals",
+                "description": "Portals allow you to render children into a DOM node outside of the parent component hierarchy. This is useful for modals, tooltips, and pop-ups.",
+                "example": "import React from 'react';\nimport ReactDOM from 'react-dom';\n\nfunction Modal({ children }) {\n  return ReactDOM.createPortal(\n    <div className=\"modal\">{children}</div>,\n    document.getElementById('modal-root')\n  );\n}\n\nexport default Modal;"
+            },
+            {
+                "level": 20,
+                "title": "React Testing with Jest and React Testing Library",
+                "description": "Testing ensures your components work correctly. Jest is a testing framework, and React Testing Library provides utilities to test React components effectively.",
+                "example": "import { render, screen } from '@testing-library/react';\nimport '@testing-library/jest-dom';\nimport Button from './Button';\n\ntest('renders button with correct label', () => {\n  render(<Button label=\"Click Me\" onClick={() => {}} />);\n  expect(screen.getByText('Click Me')).toBeInTheDocument();\n});"
+            },
+            {
+                "level": 21,
+                "title": "React with TypeScript",
+                "description": "TypeScript adds static type checking to React, making your code more robust and easier to maintain. You define types for props, state, and hooks.",
+                "example": "import React from 'react';\n\ntype GreetingProps = {\n  name: string;\n};\n\nfunction Greeting({ name }: GreetingProps) {\n  return <h1>Hello, {name}!</h1>;\n}\n\nexport default Greeting;"
+            },
+            {
+                "level": 22,
+                "title": "Code Splitting",
+                "description": "Code splitting breaks your application into smaller bundles that can be loaded on demand. This improves initial load times.",
+                "example": "import React, { lazy, Suspense } from 'react';\n\nconst OtherComponent = lazy(() => import('./OtherComponent'));\n\nexport default function App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <OtherComponent />\n    </Suspense>\n  );\n}"
+            },
+            {
+                "level": 23,
+                "title": "Deployment",
+                "description": "You can deploy React apps to various platforms like Vercel, Netlify, or GitHub Pages. Use `npm run build` to create an optimized production build.",
+                "example": "npm run build\n# After build, deploy the 'build' folder to your hosting platform."
+            },
+            {
+                "level": 24,
+                "title": "React and APIs",
+                "description": "React works seamlessly with APIs to fetch and display data. You can use the Fetch API or libraries like Axios to handle HTTP requests.",
+                "example": "import React, { useState, useEffect } from 'react';\n\nfunction Users() {\n  const [users, setUsers] = useState([]);\n\n  useEffect(() => {\n    fetch('https://jsonplaceholder.typicode.com/users')\n      .then(response => response.json())\n      .then(data => setUsers(data));\n  }, []);\n\n  return (\n    <ul>\n      {users.map(user => (\n        <li key={user.id}>{user.name}</li>\n      ))}\n    </ul>\n  );\n}\n\nexport default Users;"
+            },
+            {
+                "level": 25,
+                "title": "Server-Side Rendering (SSR) with Next.js",
+                "description": "Next.js enables server-side rendering and static site generation for React apps, improving performance and SEO.",
+                "example": "export async function getServerSideProps() {\n  const res = await fetch('https://jsonplaceholder.typicode.com/posts');\n  const posts = await res.json();\n  return { props: { posts } };\n}\n\nexport default function Home({ posts }) {\n  return (\n    <div>\n      {posts.map(post => (\n        <p key={post.id}>{post.title}</p>\n      ))}\n    </div>\n  );\n}"
+            }
+        ]
+    },
+    "Nextjs": {
+        "title": "NextJs",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Introduction to Next.js",
+                "description": "Next.js is a React framework for building fast, production-grade web applications. It provides features like server-side rendering (SSR), static site generation (SSG), API routes, and optimized performance out of the box.",
+                "example": "npx create-next-app@latest my-next-app\ncd my-next-app\nnpm run dev"
+            },
+            {
+                "level": 2,
+                "title": "File-based Routing",
+                "description": "Next.js uses a file-based routing system. Any file you create in the 'pages' folder automatically becomes a route in your application.",
+                "example": "pages/\n  index.js      // route: /\n  about.js      // route: /about\n  contact.js    // route: /contact\n\nexport default function About() {\n  return <h1>About Page</h1>;\n}"
+            },
+            {
+                "level": 3,
+                "title": "Linking Between Pages",
+                "description": "Use the `Link` component from Next.js to navigate between pages without reloading the browser, providing a seamless single-page app experience.",
+                "example": "import Link from 'next/link';\n\nexport default function Home() {\n  return (\n    <div>\n      <h1>Home Page</h1>\n      <Link href=\"/about\">Go to About</Link>\n    </div>\n  );\n}"
+            },
+            {
+                "level": 4,
+                "title": "Dynamic Routes",
+                "description": "You can create dynamic routes by using square brackets in the filename. This is useful for pages like blog posts, product pages, or user profiles.",
+                "example": "pages/blog/[id].js\n\nimport { useRouter } from 'next/router';\n\nexport default function BlogPost() {\n  const router = useRouter();\n  const { id } = router.query;\n\n  return <h1>Blog Post ID: {id}</h1>;\n}"
+            },
+            {
+                "level": 5,
+                "title": "Static Site Generation (SSG)",
+                "description": "SSG generates HTML at build time. Use `getStaticProps` to fetch data before rendering the page. Ideal for pages with content that doesn’t change frequently.",
+                "example": "export async function getStaticProps() {\n  const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');\n  const post = await res.json();\n  return {\n    props: { post },\n  };\n}\n\nexport default function Post({ post }) {\n  return <h1>{post.title}</h1>;\n}"
+            },
+            {
+                "level": 6,
+                "title": "Static Paths with Dynamic Routes",
+                "description": "When using dynamic routes with SSG, you must define paths to pre-render using `getStaticPaths`.",
+                "example": "export async function getStaticPaths() {\n  const res = await fetch('https://jsonplaceholder.typicode.com/posts');\n  const posts = await res.json();\n\n  const paths = posts.map(post => ({ params: { id: post.id.toString() } }));\n\n  return { paths, fallback: false };\n}\n\nexport async function getStaticProps({ params }) {\n  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);\n  const post = await res.json();\n  return { props: { post } };\n}\n\nexport default function Post({ post }) {\n  return <h1>{post.title}</h1>;\n}"
+            },
+            {
+                "level": 7,
+                "title": "Server-Side Rendering (SSR)",
+                "description": "Use `getServerSideProps` to fetch data on every request. This is useful for dynamic content that changes frequently, like dashboards or live data.",
+                "example": "export async function getServerSideProps() {\n  const res = await fetch('https://jsonplaceholder.typicode.com/users/1');\n  const user = await res.json();\n  return { props: { user } };\n}\n\nexport default function User({ user }) {\n  return <h1>User: {user.name}</h1>;\n}"
+            },
+            {
+                "level": 8,
+                "title": "API Routes",
+                "description": "Next.js allows you to create serverless API endpoints inside the `pages/api` folder. Each file in this folder becomes an endpoint.",
+                "example": "pages/api/hello.js\n\nexport default function handler(req, res) {\n  res.status(200).json({ message: 'Hello API!' });\n}"
+            },
+            {
+                "level": 9,
+                "title": "Environment Variables",
+                "description": "Store sensitive data like API keys using environment variables. Use `.env.local` for development and `process.env` to access them in code.",
+                "example": ".env.local\nNEXT_PUBLIC_API_URL=https://api.example.com\n\nexport async function getStaticProps() {\n  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data`);\n  const data = await res.json();\n  return { props: { data } };\n}"
+            },
+            {
+                "level": 10,
+                "title": "Image Optimization",
+                "description": "Next.js has a built-in Image component that optimizes images automatically. It supports lazy loading and resizing on the fly.",
+                "example": "import Image from 'next/image';\n\nexport default function Home() {\n  return <Image src=\"/me.png\" alt=\"Me\" width={500} height={500} />;\n}"
+            },
+            {
+                "level": 11,
+                "title": "API Fetching with SWR",
+                "description": "SWR is a React hook library for data fetching. It handles caching, revalidation, focus tracking, and more automatically.",
+                "example": "import useSWR from 'swr';\n\nconst fetcher = (url) => fetch(url).then(res => res.json());\n\nexport default function Profile() {\n  const { data, error } = useSWR('/api/user', fetcher);\n\n  if (error) return <div>Failed to load</div>;\n  if (!data) return <div>Loading...</div>;\n\n  return <div>Hello {data.name}</div>;\n}"
+            },
+            {
+                "level": 12,
+                "title": "Middleware",
+                "description": "Middleware lets you run code before a request is completed, useful for authentication, logging, or redirects. Create a `_middleware.js` file inside your pages folder.",
+                "example": "export function middleware(req) {\n  const url = req.nextUrl.clone();\n  if (!req.cookies.token) {\n    url.pathname = '/login';\n    return Response.redirect(url);\n  }\n}"
+            },
+            {
+                "level": 13,
+                "title": "Custom App and Document",
+                "description": "Customize the default App and Document to modify how pages are rendered. `_app.js` wraps all pages, and `_document.js` customizes the HTML document structure.",
+                "example": "pages/_app.js\nexport default function MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />;\n}\n\npages/_document.js\nimport { Html, Head, Main, NextScript } from 'next/document';\n\nexport default function Document() {\n  return (\n    <Html>\n      <Head />\n      <body>\n        <Main />\n        <NextScript />\n      </body>\n    </Html>\n  );\n}"
+            },
+            {
+                "level": 14,
+                "title": "API Authentication",
+                "description": "You can handle authentication using JSON Web Tokens (JWT) or OAuth inside Next.js API routes. Protect pages and endpoints based on user sessions.",
+                "example": "pages/api/login.js\nexport default function handler(req, res) {\n  if (req.method === 'POST') {\n    const { username, password } = req.body;\n    if (username === 'admin' && password === 'secret') {\n      return res.status(200).json({ token: 'fake-jwt-token' });\n    }\n    return res.status(401).json({ error: 'Invalid credentials' });\n  }\n  res.status(405).json({ error: 'Method not allowed' });\n}"
+            },
+            {
+                "level": 15,
+                "title": "API Caching and Revalidation",
+                "description": "Next.js supports Incremental Static Regeneration (ISR) to revalidate pages after they’ve been built. This enables static pages to stay up-to-date.",
+                "example": "export async function getStaticProps() {\n  const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');\n  const post = await res.json();\n\n  return {\n    props: { post },\n    revalidate: 60, // re-generate page every 60 seconds\n  };\n}\n\nexport default function Post({ post }) {\n  return <h1>{post.title}</h1>;\n}"
+            },
+            {
+                "level": 16,
+                "title": "Internationalization (i18n)",
+                "description": "Next.js has built-in support for internationalization (i18n), making it easy to create multilingual websites.",
+                "example": "next.config.js\nmodule.exports = {\n  i18n: {\n    locales: ['en', 'fr', 'es'],\n    defaultLocale: 'en',\n  },\n};"
+            },
+            {
+                "level": 17,
+                "title": "API Error Handling",
+                "description": "Handle errors gracefully in API routes by returning appropriate HTTP status codes and JSON error messages.",
+                "example": "pages/api/data.js\nexport default function handler(req, res) {\n  try {\n    throw new Error('Something went wrong');\n  } catch (error) {\n    res.status(500).json({ error: error.message });\n  }\n}"
+            },
+            {
+                "level": 18,
+                "title": "Deploying a Next.js App",
+                "description": "Next.js apps can be deployed to Vercel (official platform), Netlify, or other cloud services. Vercel offers seamless integration with GitHub and GitLab.",
+                "example": "npm run build\nnpm run start\n# Deploy by pushing to a Git repository connected to Vercel."
+            },
+            {
+                "level": 19,
+                "title": "Optimizing Performance",
+                "description": "Use built-in tools like automatic code splitting, lazy loading, image optimization, and caching headers to make your Next.js app faster.",
+                "example": "import dynamic from 'next/dynamic';\n\nconst HeavyComponent = dynamic(() => import('../components/HeavyComponent'));\n\nexport default function Home() {\n  return <HeavyComponent />;\n}"
+            },
+            {
+                "level": 20,
+                "title": "Full Stack Next.js Example",
+                "description": "Combine all concepts to create a full-stack app: static pages, server-side rendering, API routes, authentication, and deployment.",
+                "example": "pages/api/todos.js\nlet todos = [];\n\nexport default function handler(req, res) {\n  if (req.method === 'GET') return res.status(200).json(todos);\n  if (req.method === 'POST') {\n    const todo = { id: Date.now(), text: req.body.text };\n    todos.push(todo);\n    return res.status(201).json(todo);\n  }\n  res.status(405).end();\n}\n\npages/index.js\nimport { useState } from 'react';\n\nexport default function Home() {\n  const [todo, setTodo] = useState('');\n\n  const addTodo = async () => {\n    await fetch('/api/todos', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({ text: todo }),\n    });\n  };\n\n  return (\n    <div>\n      <input value={todo} onChange={(e) => setTodo(e.target.value)} />\n      <button onClick={addTodo}>Add Todo</button>\n    </div>\n  );\n}"
+            }
+        ]
+    },
+    "NodeJs": {
+        "title": "NodeJs",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Introduction to Node.js",
+                "description": "Node.js is a runtime environment that allows you to run JavaScript code on the server side. It uses the V8 JavaScript engine and is designed for building scalable, high-performance applications. Node.js is event-driven and non-blocking, making it ideal for real-time applications like chat apps, streaming services, and APIs.",
+                "example": "console.log('Hello from Node.js!');"
+            },
+            {
+                "level": 2,
+                "title": "Installing Node.js and npm",
+                "description": "To get started with Node.js, install it from the official website. Node.js comes with npm (Node Package Manager) pre-installed, which allows you to install and manage packages and libraries. Verify installation by running `node -v` and `npm -v` in your terminal.",
+                "example": "node -v\nnpm -v"
+            },
+            {
+                "level": 3,
+                "title": "Creating Your First Node.js App",
+                "description": "You can create a simple Node.js app by using the built-in 'http' module to set up a basic server. This server listens for requests and responds with a message, demonstrating the core of Node.js functionality.",
+                "example": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello, Node.js!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server running at http://localhost:3000');\n});"
+            },
+            {
+                "level": 4,
+                "title": "Modules and require()",
+                "description": "Node.js uses modules to organize code. You can use built-in modules like 'fs', 'path', and 'http', or create your own custom modules. The `require()` function is used to import modules into your application.",
+                "example": "// customModule.js\nmodule.exports = {\n  greet: function() {\n    return 'Hello from custom module!';\n  }\n};\n\n// app.js\nconst custom = require('./customModule');\nconsole.log(custom.greet());"
+            },
+            {
+                "level": 5,
+                "title": "File System Module (fs)",
+                "description": "The 'fs' module allows you to interact with the file system. You can read, write, update, and delete files using this module, making it essential for backend development in Node.js.",
+                "example": "const fs = require('fs');\n\n// Writing to a file\nfs.writeFileSync('example.txt', 'Hello, file system!');\n\n// Reading from a file\nconst data = fs.readFileSync('example.txt', 'utf8');\nconsole.log(data);"
+            },
+            {
+                "level": 6,
+                "title": "npm and Packages",
+                "description": "npm is used to manage external libraries and packages in Node.js. You can initialize a project with `npm init` and install packages using `npm install`. Popular packages include Express, Mongoose, and Lodash.",
+                "example": "npm init -y\nnpm install express"
+            },
+            {
+                "level": 7,
+                "title": "Building a Simple API with Express",
+                "description": "Express is a lightweight framework for building web servers and APIs in Node.js. It simplifies handling routes, middleware, and requests/responses.",
+                "example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello, Express!');\n});\n\napp.listen(3000, () => {\n  console.log('Server running on http://localhost:3000');\n});"
+            },
+            {
+                "level": 8,
+                "title": "Middleware in Express",
+                "description": "Middleware functions are used in Express to process requests before sending responses. They can be used for tasks like authentication, logging, or parsing request bodies.",
+                "example": "const express = require('express');\nconst app = express();\n\n// Custom middleware\napp.use((req, res, next) => {\n  console.log(`${req.method} ${req.url}`);\n  next();\n});\n\napp.get('/', (req, res) => {\n  res.send('Middleware example');\n});\n\napp.listen(3000);"
+            },
+            {
+                "level": 9,
+                "title": "Environment Variables",
+                "description": "Environment variables store configuration data outside of your code, such as database URLs or API keys. Use the 'dotenv' package to load variables from a `.env` file into your application.",
+                "example": "npm install dotenv\n\n// .env file\nPORT=3000\n\n// index.js\nrequire('dotenv').config();\nconsole.log(process.env.PORT);"
+            },
+            {
+                "level": 10,
+                "title": "Connecting to MongoDB",
+                "description": "MongoDB is a popular NoSQL database often used with Node.js. You can connect to it using the Mongoose library, which provides a schema-based solution to model your data.",
+                "example": "npm install mongoose\n\nconst mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost:27017/mydb')\n  .then(() => console.log('Connected to MongoDB'))\n  .catch(err => console.error(err));"
+            },
+            {
+                "level": 11,
+                "title": "Building a REST API",
+                "description": "A REST API allows communication between a server and client using HTTP methods like GET, POST, PUT, and DELETE. You can combine Express and Mongoose to create CRUD endpoints for a database.",
+                "example": "const express = require('express');\nconst app = express();\n\napp.use(express.json());\n\napp.get('/users', (req, res) => {\n  res.json([{ id: 1, name: 'Alice' }]);\n});\n\napp.listen(3000);"
+            },
+            {
+                "level": 12,
+                "title": "Error Handling",
+                "description": "Error handling is crucial for building robust applications. Use try-catch blocks, middleware, and proper response codes to handle errors gracefully.",
+                "example": "app.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).send('Something broke!');\n});"
+            },
+            {
+                "level": 13,
+                "title": "Authentication with JWT",
+                "description": "JSON Web Tokens (JWT) are commonly used for user authentication. The server issues a token after login, which the client sends with each request for verification.",
+                "example": "npm install jsonwebtoken\n\nconst jwt = require('jsonwebtoken');\n\nconst token = jwt.sign({ userId: 1 }, 'secretKey', { expiresIn: '1h' });\nconsole.log(token);"
+            },
+            {
+                "level": 14,
+                "title": "EventEmitter",
+                "description": "Node.js uses an event-driven architecture. The EventEmitter class lets you create and handle custom events in your application.",
+                "example": "const EventEmitter = require('events');\nconst emitter = new EventEmitter();\n\nemitter.on('greet', () => console.log('Hello Event!'));\nemitter.emit('greet');"
+            },
+            {
+                "level": 15,
+                "title": "Streams in Node.js",
+                "description": "Streams handle data in chunks, making them efficient for reading and writing large files. There are four types: Readable, Writable, Duplex, and Transform streams.",
+                "example": "const fs = require('fs');\nconst readStream = fs.createReadStream('bigfile.txt', 'utf8');\n\nreadStream.on('data', chunk => {\n  console.log('New chunk received:', chunk);\n});"
+            },
+            {
+                "level": 16,
+                "title": "Deploying Node.js Apps",
+                "description": "You can deploy Node.js apps to hosting platforms like Heroku, Vercel, or AWS. Make sure to set up environment variables, production scripts, and security practices before deployment.",
+                "example": "// Example deployment command\nheroku create\nheroku config:set NODE_ENV=production\nheroku push origin main"
+            },
+            {
+                "level": 17,
+                "title": "Clustering in Node.js",
+                "description": "Node.js runs on a single thread by default, which can limit performance on multi-core systems. The 'cluster' module allows you to spawn multiple worker processes that share the same server port, improving scalability and performance.",
+                "example": "const cluster = require('cluster');\nconst http = require('http');\nconst os = require('os');\n\nif (cluster.isMaster) {\n  const cpuCount = os.cpus().length;\n  for (let i = 0; i < cpuCount; i++) {\n    cluster.fork();\n  }\n  cluster.on('exit', () => {\n    console.log('Worker exited, creating a new one...');\n    cluster.fork();\n  });\n} else {\n  http.createServer((req, res) => {\n    res.writeHead(200);\n    res.end('Hello from Clustered Server');\n  }).listen(3000);\n}"
+            },
+            {
+                "level": 18,
+                "title": "WebSockets with Socket.IO",
+                "description": "WebSockets enable real-time, bi-directional communication between clients and the server. The 'socket.io' package is a popular library for implementing WebSockets in Node.js applications, ideal for chat apps or live notifications.",
+                "example": "npm install socket.io\n\n// server.js\nconst express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\nio.on('connection', socket => {\n  console.log('A user connected');\n  socket.on('message', msg => {\n    io.emit('message', msg);\n  });\n});\n\nserver.listen(3000);"
+            },
+            {
+                "level": 19,
+                "title": "Caching with Redis",
+                "description": "Caching improves performance by storing frequently accessed data in memory. Redis is a popular in-memory data store that integrates seamlessly with Node.js, reducing database calls and speeding up responses.",
+                "example": "npm install redis\n\nconst redis = require('redis');\nconst client = redis.createClient();\n\nclient.on('connect', () => console.log('Connected to Redis'));\n\nclient.set('key', 'value', redis.print);\nclient.get('key', (err, reply) => {\n  console.log(reply);\n});"
+            },
+            {
+                "level": 20,
+                "title": "Rate Limiting",
+                "description": "Rate limiting prevents abuse of APIs by restricting the number of requests a client can make within a certain timeframe. It's essential for protecting your server from overload or malicious attacks.",
+                "example": "npm install express-rate-limit\n\nconst rateLimit = require('express-rate-limit');\nconst express = require('express');\nconst app = express();\n\nconst limiter = rateLimit({\n  windowMs: 1 * 60 * 1000, // 1 minute\n  max: 5 // limit each IP to 5 requests per minute\n});\n\napp.use(limiter);\napp.get('/', (req, res) => res.send('Hello, Rate Limit!'));\n\napp.listen(3000);"
+            },
+            {
+                "level": 21,
+                "title": "Logging with Winston",
+                "description": "Logging is vital for debugging and monitoring production apps. The Winston library provides a flexible logging system with multiple transport options like console, files, or external services.",
+                "example": "npm install winston\n\nconst { createLogger, transports, format } = require('winston');\n\nconst logger = createLogger({\n  format: format.combine(\n    format.timestamp(),\n    format.simple()\n  ),\n  transports: [\n    new transports.Console(),\n    new transports.File({ filename: 'app.log' })\n  ]\n});\n\nlogger.info('Server started');\nlogger.error('An error occurred');"
+            },
+            {
+                "level": 22,
+                "title": "Asynchronous Programming with Promises and Async/Await",
+                "description": "Node.js is asynchronous by default. Understanding Promises and async/await is essential for writing clean, non-blocking code while handling asynchronous operations like database queries or API requests.",
+                "example": "function fetchData() {\n  return new Promise((resolve) => {\n    setTimeout(() => resolve('Data fetched!'), 1000);\n  });\n}\n\nasync function getData() {\n  const data = await fetchData();\n  console.log(data);\n}\n\ngetData();"
+            },
+            {
+                "level": 23,
+                "title": "Worker Threads",
+                "description": "The 'worker_threads' module allows you to run JavaScript code in parallel threads. This is useful for CPU-intensive tasks like image processing or data encryption, which would otherwise block the main thread.",
+                "example": "const { Worker } = require('worker_threads');\n\nconst worker = new Worker(`\n  const { parentPort } = require('worker_threads');\n  parentPort.postMessage('Hello from Worker Thread!');\n`, { eval: true });\n\nworker.on('message', msg => console.log(msg));"
+            },
+            {
+                "level": 24,
+                "title": "Microservices Architecture",
+                "description": "Microservices involve breaking a large application into smaller, independent services that communicate via APIs or messaging queues. This architecture makes scaling and maintenance easier.",
+                "example": "// userService.js\nconst express = require('express');\nconst app = express();\n\napp.get('/users', (req, res) => {\n  res.json([{ id: 1, name: 'Alice' }]);\n});\n\napp.listen(4000, () => console.log('User Service running on port 4000'));\n\n// orderService.js\nconst express = require('express');\nconst app = express();\n\napp.get('/orders', (req, res) => {\n  res.json([{ id: 101, item: 'Laptop' }]);\n});\n\napp.listen(5000, () => console.log('Order Service running on port 5000'));"
+            },
+            {
+                "level": 25,
+                "title": "Message Queues with RabbitMQ",
+                "description": "Message queues help microservices communicate reliably and asynchronously. RabbitMQ is a popular message broker for decoupling services and improving fault tolerance.",
+                "example": "npm install amqplib\n\nconst amqp = require('amqplib');\n\nasync function sendMessage() {\n  const connection = await amqp.connect('amqp://localhost');\n  const channel = await connection.createChannel();\n  const queue = 'tasks';\n  const msg = 'Hello, RabbitMQ!';\n\n  await channel.assertQueue(queue);\n  channel.sendToQueue(queue, Buffer.from(msg));\n  console.log('Sent:', msg);\n}\n\nsendMessage();"
+            },
+            {
+                "level": 26,
+                "title": "GraphQL API with Node.js",
+                "description": "GraphQL is an alternative to REST APIs that allows clients to request only the data they need. You can use libraries like Apollo Server to build a GraphQL API in Node.js.",
+                "example": "npm install apollo-server graphql\n\nconst { ApolloServer, gql } = require('apollo-server');\n\nconst typeDefs = gql`\n  type Query {\n    hello: String\n  }\n`;\n\nconst resolvers = {\n  Query: {\n    hello: () => 'Hello GraphQL!'\n  }\n};\n\nconst server = new ApolloServer({ typeDefs, resolvers });\n\nserver.listen(3000).then(({ url }) => {\n  console.log(`GraphQL server ready at ${url}`);\n});"
+            },
+            {
+                "level": 27,
+                "title": "Testing with Jest",
+                "description": "Testing is essential to ensure code quality and prevent bugs. Jest is a popular testing framework for Node.js that allows you to write unit and integration tests easily.",
+                "example": "npm install jest --save-dev\n\n// sum.js\nfunction sum(a, b) {\n  return a + b;\n}\nmodule.exports = sum;\n\n// sum.test.js\nconst sum = require('./sum');\n\ntest('adds 1 + 2 to equal 3', () => {\n  expect(sum(1, 2)).toBe(3);\n});"
+            },
+            {
+                "level": 28,
+                "title": "Scaling Node.js with Docker",
+                "description": "Docker allows you to containerize your Node.js applications, making them portable and easier to deploy across different environments. Containers are lightweight and ideal for microservices.",
+                "example": "// Dockerfile\nFROM node:18\nWORKDIR /usr/src/app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]"
+            },
+            {
+                "level": 29,
+                "title": "Security Best Practices",
+                "description": "Security is crucial for production applications. Best practices include validating inputs, using HTTPS, protecting against SQL injection and XSS, and securely storing secrets.",
+                "example": "// Example: helmet for security headers\nnpm install helmet\n\nconst express = require('express');\nconst helmet = require('helmet');\nconst app = express();\n\napp.use(helmet());\n\napp.get('/', (req, res) => res.send('Secure server'));\n\napp.listen(3000);"
+            },
+            {
+                "level": 30,
+                "title": "Monitoring and Performance",
+                "description": "Monitoring tools help track app health, performance, and error rates. Tools like PM2, New Relic, and Datadog are commonly used to monitor production Node.js apps.",
+                "example": "npm install pm2 -g\n\n// Start app with PM2\npm2 start server.js\n\n// Monitor logs\npm2 logs\n\n// Performance metrics\npm2 monit"
+            },
+            {
+                "level": 31,
+                "title": "Integrating AI with Node.js",
+                "description": "You can integrate AI into your Node.js apps by connecting with AI APIs such as OpenAI, Hugging Face, or TensorFlow.js. This allows you to add features like natural language processing, sentiment analysis, and image recognition.",
+                "example": "npm install openai\n\nconst { Configuration, OpenAIApi } = require('openai');\n\nconst configuration = new Configuration({\n  apiKey: process.env.OPENAI_API_KEY,\n});\n\nconst openai = new OpenAIApi(configuration);\n\nasync function runAI() {\n  const response = await openai.createChatCompletion({\n    model: 'gpt-3.5-turbo',\n    messages: [{ role: 'user', content: 'Hello, AI!' }],\n  });\n  console.log(response.data.choices[0].message.content);\n}\n\nrunAI();"
+            },
+            {
+                "level": 32,
+                "title": "TensorFlow.js for Machine Learning",
+                "description": "TensorFlow.js lets you run machine learning models directly in Node.js. You can train models or load pre-trained ones for tasks like image classification, speech recognition, or predictive analytics.",
+                "example": "npm install @tensorflow/tfjs\n\nconst tf = require('@tensorflow/tfjs');\n\nconst model = tf.sequential();\nmodel.add(tf.layers.dense({ units: 1, inputShape: [1] }));\nmodel.compile({ optimizer: 'sgd', loss: 'meanSquaredError' });\n\nconst xs = tf.tensor2d([1, 2, 3, 4], [4, 1]);\nconst ys = tf.tensor2d([1, 3, 5, 7], [4, 1]);\n\nmodel.fit(xs, ys).then(() => {\n  model.predict(tf.tensor2d([5], [1, 1])).print();\n});"
+            },
+            {
+                "level": 33,
+                "title": "Blockchain Basics with Node.js",
+                "description": "Blockchain technology can be used to create decentralized apps (dApps). Using Node.js, you can build blockchain networks or interact with popular blockchains like Ethereum through Web3.js.",
+                "example": "npm install web3\n\nconst Web3 = require('web3');\nconst web3 = new Web3('https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID');\n\nasync function getBlockNumber() {\n  const blockNumber = await web3.eth.getBlockNumber();\n  console.log('Latest Ethereum Block:', blockNumber);\n}\n\ngetBlockNumber();"
+            },
+            {
+                "level": 34,
+                "title": "Smart Contracts with Ethereum",
+                "description": "Node.js can be used to deploy and interact with smart contracts on Ethereum. Smart contracts are self-executing programs that run on the blockchain, commonly used in dApps and NFTs.",
+                "example": "npm install web3 solc\n\nconst Web3 = require('web3');\nconst web3 = new Web3('https://rinkeby.infura.io/v3/YOUR_INFURA_PROJECT_ID');\n\nconst contractABI = [/* Smart Contract ABI */];\nconst contractAddress = '0x123...';\nconst contract = new web3.eth.Contract(contractABI, contractAddress);\n\nasync function readData() {\n  const data = await contract.methods.someMethod().call();\n  console.log('Contract data:', data);\n}\n\nreadData();"
+            },
+            {
+                "level": 35,
+                "title": "Building a dApp Backend",
+                "description": "A decentralized application (dApp) often needs a traditional backend to store off-chain data, user authentication, and interactions with the blockchain network.",
+                "example": "// Example: Backend endpoint for blockchain data\nconst express = require('express');\nconst app = express();\n\napp.get('/balance/:address', async (req, res) => {\n  const balance = await web3.eth.getBalance(req.params.address);\n  res.json({ balance });\n});\n\napp.listen(3000, () => console.log('dApp backend running on port 3000'));"
+            },
+            {
+                "level": 36,
+                "title": "Continuous Integration with GitHub Actions",
+                "description": "CI/CD pipelines automate the process of testing and deploying code. GitHub Actions can run automated tests and deploy your Node.js application whenever you push updates to your repository.",
+                "example": "// .github/workflows/nodejs.yml\nname: Node.js CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Setup Node.js\n        uses: actions/setup-node@v2\n        with:\n          node-version: '18'\n      - run: npm install\n      - run: npm test"
+            },
+            {
+                "level": 37,
+                "title": "Advanced Docker with Kubernetes",
+                "description": "Kubernetes is a container orchestration system that automates scaling, deployment, and management of Node.js containers. It is ideal for microservices and cloud-native applications.",
+                "example": "// deployment.yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nodejs-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: nodejs-app\n  template:\n    metadata:\n      labels:\n        app: nodejs-app\n    spec:\n      containers:\n      - name: nodejs-app\n        image: my-node-app:latest\n        ports:\n        - containerPort: 3000"
+            },
+            {
+                "level": 38,
+                "title": "Serverless Functions with AWS Lambda",
+                "description": "Serverless architecture allows you to run functions on demand without managing servers. AWS Lambda is a popular platform for deploying Node.js functions triggered by events like HTTP requests or database updates.",
+                "example": "// index.js\nexports.handler = async (event) => {\n  return {\n    statusCode: 200,\n    body: JSON.stringify({ message: 'Hello from AWS Lambda!' })\n  };\n};"
+            },
+            {
+                "level": 39,
+                "title": "Advanced Authentication with OAuth 2.0",
+                "description": "OAuth 2.0 is a secure authentication standard widely used by platforms like Google and Facebook. It allows users to log into your application using third-party accounts without sharing their passwords.",
+                "example": "npm install passport passport-google-oauth20\n\nconst passport = require('passport');\nconst GoogleStrategy = require('passport-google-oauth20').Strategy;\n\npassport.use(new GoogleStrategy({\n  clientID: 'YOUR_CLIENT_ID',\n  clientSecret: 'YOUR_CLIENT_SECRET',\n  callbackURL: '/auth/google/callback'\n}, (accessToken, refreshToken, profile, done) => {\n  return done(null, profile);\n}));"
+            },
+            {
+                "level": 40,
+                "title": "Real-Time Analytics Dashboard",
+                "description": "Create real-time analytics dashboards using Node.js, WebSockets, and a database like Redis or MongoDB. This is useful for monitoring user activity, financial data, or IoT devices.",
+                "example": "// Example with Socket.io\nconst express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\nlet activeUsers = 0;\n\nio.on('connection', socket => {\n  activeUsers++;\n  io.emit('update', { activeUsers });\n  socket.on('disconnect', () => {\n    activeUsers--;\n    io.emit('update', { activeUsers });\n  });\n});\n\nserver.listen(3000);"
+            },
+            {
+                "level": 41,
+                "title": "Distributed Systems with gRPC",
+                "description": "gRPC is a high-performance framework for connecting services in distributed systems. It uses protocol buffers for efficient data serialization and works well for microservices communication.",
+                "example": "npm install @grpc/grpc-js @grpc/proto-loader\n\nconst grpc = require('@grpc/grpc-js');\nconst protoLoader = require('@grpc/proto-loader');\n\nconst packageDefinition = protoLoader.loadSync('service.proto');\nconst myProto = grpc.loadPackageDefinition(packageDefinition);\n\nconst server = new grpc.Server();\n\nserver.addService(myProto.MyService.service, {\n  sayHello: (call, callback) => {\n    callback(null, { message: 'Hello, gRPC!' });\n  }\n});\n\nserver.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {\n  server.start();\n});"
+            },
+            {
+                "level": 42,
+                "title": "CI/CD with Jenkins",
+                "description": "Jenkins is a popular tool for automating builds, tests, and deployments. It integrates well with Node.js projects and can be part of a robust CI/CD pipeline.",
+                "example": "// Jenkinsfile\npipeline {\n  agent any\n  stages {\n    stage('Install') {\n      steps {\n        sh 'npm install'\n      }\n    }\n    stage('Test') {\n      steps {\n        sh 'npm test'\n      }\n    }\n    stage('Deploy') {\n      steps {\n        echo 'Deploying application...'\n      }\n    }\n  }\n}"
+            },
+            {
+                "level": 43,
+                "title": "Event-Driven Microservices",
+                "description": "Event-driven architecture uses events to trigger communication between microservices. This allows services to be loosely coupled and scalable, often implemented with message queues like Kafka or RabbitMQ.",
+                "example": "npm install kafka-node\n\nconst kafka = require('kafka-node');\nconst client = new kafka.KafkaClient({ kafkaHost: 'localhost:9092' });\nconst producer = new kafka.Producer(client);\n\nproducer.on('ready', () => {\n  producer.send([{ topic: 'test', messages: 'Hello Kafka!' }], (err, data) => {\n    console.log(data);\n  });\n});"
+            },
+            {
+                "level": 44,
+                "title": "Scaling to Millions of Users",
+                "description": "Scaling Node.js applications to millions of users involves a combination of horizontal scaling, load balancing, caching, and microservices architecture. Tools like NGINX, Redis, and Kubernetes play crucial roles.",
+                "example": "// NGINX Load Balancer example config\nhttp {\n  upstream node_servers {\n    server 127.0.0.1:3000;\n    server 127.0.0.1:3001;\n  }\n  server {\n    listen 80;\n    location / {\n      proxy_pass http://node_servers;\n    }\n  }\n}"
+            },
+            {
+                "level": 45,
+                "title": "Final Project: Full Stack Enterprise App",
+                "description": "Combine everything learned to build a production-ready full stack app with authentication, real-time features, microservices, CI/CD pipelines, Kubernetes deployment, and monitoring dashboards.",
+                "example": "// Suggested Tech Stack:\n// Backend: Node.js, Express, MongoDB\n// Frontend: React.js or Next.js\n// Real-time: Socket.io\n// Deployment: Docker + Kubernetes\n// CI/CD: GitHub Actions + Jenkins\n// Monitoring: PM2 + Datadog"
+            }
+        ]
+    },
+    "ExpressJs": {
+        "title": "ExpressJs",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Introduction to Express.js",
+                "description": "Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It simplifies handling HTTP requests, routing, and middleware.",
+                "example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello, Express!');\n});\n\napp.listen(3000, () => console.log('Server running on http://localhost:3000'));"
+            },
+            {
+                "level": 2,
+                "title": "Installing Express.js",
+                "description": "To use Express, install it using npm. Then, require it in your project and create an app instance to start building your server.",
+                "example": "npm init -y\nnpm install express"
+            },
+            {
+                "level": 3,
+                "title": "Basic Routing",
+                "description": "Routing determines how an application responds to client requests at specific endpoints. Express provides methods like GET, POST, PUT, and DELETE for handling different HTTP requests.",
+                "example": "app.get('/about', (req, res) => {\n  res.send('About Page');\n});\n\napp.post('/submit', (req, res) => {\n  res.send('Form submitted!');\n});"
+            },
+            {
+                "level": 4,
+                "title": "Middleware Basics",
+                "description": "Middleware functions are functions that have access to the request and response objects. They are used for logging, authentication, parsing request bodies, and more.",
+                "example": "app.use((req, res, next) => {\n  console.log(`${req.method} ${req.url}`);\n  next();\n});"
+            },
+            {
+                "level": 5,
+                "title": "Serving Static Files",
+                "description": "Express makes it easy to serve static files like HTML, CSS, and images by using the built-in express.static middleware.",
+                "example": "app.use(express.static('public'));\n// Access files via http://localhost:3000/filename"
+            },
+            {
+                "level": 6,
+                "title": "Express JSON Middleware",
+                "description": "To handle JSON data sent by clients, Express provides built-in middleware to parse JSON request bodies.",
+                "example": "app.use(express.json());\n\napp.post('/data', (req, res) => {\n  console.log(req.body);\n  res.send('Data received');\n});"
+            },
+            {
+                "level": 7,
+                "title": "Route Parameters and Query Strings",
+                "description": "Express allows you to capture values from URLs using route parameters and query strings for dynamic routing.",
+                "example": "app.get('/user/:id', (req, res) => {\n  res.send(`User ID: ${req.params.id}`);\n});\n\napp.get('/search', (req, res) => {\n  res.send(`Search query: ${req.query.q}`);\n});"
+            },
+            {
+                "level": 8,
+                "title": "Using Template Engines",
+                "description": "Template engines like EJS or Pug allow you to dynamically generate HTML pages from data on the server.",
+                "example": "npm install ejs\n\napp.set('view engine', 'ejs');\n\napp.get('/', (req, res) => {\n  res.render('index', { title: 'Home Page' });\n});"
+            },
+            {
+                "level": 9,
+                "title": "Modular Routes",
+                "description": "Separate routes into different files for cleaner, more maintainable code by using express.Router().",
+                "example": "// routes/user.js\nconst express = require('express');\nconst router = express.Router();\n\nrouter.get('/', (req, res) => res.send('User List'));\nmodule.exports = router;\n\n// index.js\nconst userRoutes = require('./routes/user');\napp.use('/users', userRoutes);"
+            },
+            {
+                "level": 10,
+                "title": "Error Handling Middleware",
+                "description": "Handle errors globally by creating a custom middleware that captures errors and returns a proper response to the client.",
+                "example": "app.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).send('Something went wrong!');\n});"
+            },
+            {
+                "level": 11,
+                "title": "Express with MongoDB",
+                "description": "Integrate Express with a database like MongoDB using Mongoose to store and retrieve data dynamically.",
+                "example": "const mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost:27017/mydb');\n\nconst userSchema = new mongoose.Schema({ name: String });\nconst User = mongoose.model('User', userSchema);\n\napp.get('/users', async (req, res) => {\n  const users = await User.find();\n  res.json(users);\n});"
+            },
+            {
+                "level": 12,
+                "title": "Building a RESTful API",
+                "description": "Create a REST API with Express by handling different HTTP methods like GET, POST, PUT, and DELETE for CRUD operations.",
+                "example": "app.get('/api/items', (req, res) => res.send('Get all items'));\napp.post('/api/items', (req, res) => res.send('Create an item'));\napp.put('/api/items/:id', (req, res) => res.send('Update an item'));\napp.delete('/api/items/:id', (req, res) => res.send('Delete an item'));"
+            },
+            {
+                "level": 13,
+                "title": "Authentication with JWT",
+                "description": "Use JSON Web Tokens (JWT) for secure authentication in your Express app.",
+                "example": "npm install jsonwebtoken\n\nconst jwt = require('jsonwebtoken');\n\napp.post('/login', (req, res) => {\n  const token = jwt.sign({ userId: 1 }, 'secretKey', { expiresIn: '1h' });\n  res.json({ token });\n});"
+            },
+            {
+                "level": 14,
+                "title": "CORS in Express",
+                "description": "Enable Cross-Origin Resource Sharing (CORS) so your API can be accessed from different domains securely.",
+                "example": "npm install cors\n\nconst cors = require('cors');\napp.use(cors());"
+            },
+            {
+                "level": 15,
+                "title": "Express and File Uploads",
+                "description": "Handle file uploads using the Multer middleware in Express.",
+                "example": "npm install multer\n\nconst multer = require('multer');\nconst upload = multer({ dest: 'uploads/' });\n\napp.post('/upload', upload.single('file'), (req, res) => {\n  res.send('File uploaded successfully');\n});"
+            },
+            {
+                "level": 16,
+                "title": "Rate Limiting and Security",
+                "description": "Add security to your API by limiting requests and preventing common attacks like brute force or DDoS.",
+                "example": "npm install express-rate-limit\n\nconst rateLimit = require('express-rate-limit');\nconst limiter = rateLimit({\n  windowMs: 15 * 60 * 1000,\n  max: 100\n});\n\napp.use(limiter);"
+            },
+            {
+                "level": 17,
+                "title": "Logging and Debugging",
+                "description": "Use tools like Morgan or Winston for logging requests and errors to help with debugging and monitoring.",
+                "example": "npm install morgan\n\nconst morgan = require('morgan');\napp.use(morgan('dev'));"
+            },
+            {
+                "level": 18,
+                "title": "Testing Express Apps",
+                "description": "Test your Express app using tools like Mocha, Chai, or Jest to ensure it works as expected.",
+                "example": "npm install mocha chai supertest --save-dev\n\n// test/app.test.js\nconst request = require('supertest');\nconst app = require('../app');\n\ndescribe('GET /', () => {\n  it('should return 200 OK', async () => {\n    await request(app).get('/').expect(200);\n  });\n});"
+            },
+            {
+                "level": 19,
+                "title": "WebSockets with Express",
+                "description": "Integrate WebSockets into your Express app to build real-time features like chat applications or live notifications.",
+                "example": "const http = require('http');\nconst socketIo = require('socket.io');\n\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', socket => {\n  console.log('User connected');\n  socket.on('message', msg => io.emit('message', msg));\n});"
+            },
+            {
+                "level": 20,
+                "title": "Deploying an Express App",
+                "description": "Deploy your Express app to platforms like Heroku, AWS, or Vercel by setting up production scripts and environment variables.",
+                "example": "// package.json\n\"scripts\": {\n  \"start\": \"node index.js\",\n  \"dev\": \"nodemon index.js\"\n}\n\n// Deploy to Heroku\nheroku create\nheroku config:set NODE_ENV=production\nheroku git:remote -a your-app-name\nheroku push origin main"
+            },
+
+            
+  {
+    "level": 21,
+    "title": "Cluster Mode for Scaling",
+    "description": "Node.js runs on a single thread by default. Express apps can use the Node.js 'cluster' module to run multiple instances across CPU cores, improving performance and handling more concurrent requests.",
+    "example": "const cluster = require('cluster');\nconst os = require('os');\n\nif (cluster.isMaster) {\n  const cpuCount = os.cpus().length;\n  for (let i = 0; i < cpuCount; i++) {\n    cluster.fork();\n  }\n  cluster.on('exit', () => cluster.fork());\n} else {\n  const express = require('express');\n  const app = express();\n  app.get('/', (req, res) => res.send('Clustered Express App'));\n  app.listen(3000);\n}"
+  },
+  {
+    "level": 22,
+    "title": "Load Balancing Express Apps",
+    "description": "Distribute traffic across multiple Express app instances using a reverse proxy or load balancer like Nginx or PM2 to improve reliability and uptime.",
+    "example": "# Example Nginx config\nupstream express_cluster {\n  server 127.0.0.1:3000;\n  server 127.0.0.1:3001;\n}\n\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://express_cluster;\n  }\n}"
+  },
+  {
+    "level": 23,
+    "title": "Using PM2 for Process Management",
+    "description": "PM2 is a production process manager for Node.js applications that helps manage multiple instances, load balancing, logging, and auto-restarts.",
+    "example": "npm install pm2 -g\n\n# Start app with PM2\npm2 start index.js -i max\n\n# Monitor app\npm2 logs\npm2 monit"
+  },
+  {
+    "level": 24,
+    "title": "Microservices with Express",
+    "description": "Break large monolithic apps into smaller microservices, each handling a specific domain or functionality. This improves scalability and code maintainability.",
+    "example": "// user-service.js\nconst express = require('express');\nconst app = express();\n\napp.get('/users', (req, res) => res.json([{ id: 1, name: 'Alice' }]));\n\napp.listen(4000, () => console.log('User service running on port 4000'));\n\n// API Gateway can route requests to different services."
+  },
+  {
+    "level": 25,
+    "title": "API Gateway Integration",
+    "description": "An API gateway acts as a single entry point for clients and routes requests to different microservices, handling authentication, rate-limiting, and logging.",
+    "example": "const express = require('express');\nconst app = express();\nconst proxy = require('http-proxy-middleware');\n\napp.use('/users', proxy.createProxyMiddleware({ target: 'http://localhost:4000', changeOrigin: true }));\n\napp.listen(3000, () => console.log('API Gateway running on port 3000'));"
+  },
+  {
+    "level": 26,
+    "title": "Message Queues with Express",
+    "description": "Use message brokers like RabbitMQ or Kafka to enable asynchronous communication between services, preventing bottlenecks in your Express app.",
+    "example": "npm install amqplib\n\nconst amqp = require('amqplib');\n\nasync function sendMessage() {\n  const connection = await amqp.connect('amqp://localhost');\n  const channel = await connection.createChannel();\n  await channel.assertQueue('tasks');\n  channel.sendToQueue('tasks', Buffer.from('Process this task'));\n  console.log('Message sent');\n}\n\nsendMessage();"
+  },
+  {
+    "level": 27,
+    "title": "Caching with Redis",
+    "description": "Improve performance by caching frequently requested data using Redis. This reduces database load and response time for repetitive queries.",
+    "example": "npm install redis\n\nconst redis = require('redis');\nconst client = redis.createClient();\n\nclient.connect();\n\napp.get('/data', async (req, res) => {\n  const cachedData = await client.get('data');\n  if (cachedData) return res.json(JSON.parse(cachedData));\n\n  const freshData = { message: 'Fresh data' };\n  await client.set('data', JSON.stringify(freshData));\n  res.json(freshData);\n});"
+  },
+  {
+    "level": 28,
+    "title": "WebSockets for Real-Time Features",
+    "description": "Add real-time capabilities like live chat, notifications, or tracking using WebSockets with libraries like Socket.IO.",
+    "example": "const http = require('http');\nconst socketIo = require('socket.io');\n\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', socket => {\n  console.log('New client connected');\n  socket.on('message', msg => io.emit('message', msg));\n});\n\nserver.listen(3000);"
+  },
+  {
+    "level": 29,
+    "title": "GraphQL with Express",
+    "description": "Integrate GraphQL into your Express app to create flexible APIs with strongly typed schemas and resolvers.",
+    "example": "npm install express-graphql graphql\n\nconst { graphqlHTTP } = require('express-graphql');\nconst { buildSchema } = require('graphql');\n\nconst schema = buildSchema(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = { hello: () => 'Hello, GraphQL!' };\n\napp.use('/graphql', graphqlHTTP({ schema, rootValue: root, graphiql: true }));"
+  },
+  {
+    "level": 30,
+    "title": "Dockerizing Express Apps",
+    "description": "Containerize your Express app using Docker to ensure consistent deployments across different environments.",
+    "example": "# Dockerfile\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"index.js\"]"
+  },
+  {
+    "level": 31,
+    "title": "CI/CD Pipeline for Express",
+    "description": "Automate testing, building, and deploying your Express app using CI/CD tools like GitHub Actions, GitLab CI, or Jenkins.",
+    "example": "name: Express CI/CD\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test"
+  },
+  {
+    "level": 32,
+    "title": "Server-Side Rendering (SSR)",
+    "description": "Use Express to serve pre-rendered HTML for SEO-friendly and faster-loading pages, often paired with frontend frameworks like React or Next.js.",
+    "example": "app.get('/', (req, res) => {\n  const html = `<html><head><title>SSR Example</title></head><body><h1>Hello from SSR</h1></body></html>`;\n  res.send(html);\n});"
+  },
+  {
+    "level": 33,
+    "title": "Monitoring and Performance Metrics",
+    "description": "Monitor your Express app's performance using tools like New Relic, Datadog, or Prometheus to identify bottlenecks and improve response times.",
+    "example": "npm install express-status-monitor\n\nconst monitor = require('express-status-monitor');\napp.use(monitor());"
+  },
+  {
+    "level": 34,
+    "title": "Scaling Databases for Express",
+    "description": "Learn how to scale your database to handle high traffic using read replicas, sharding, and connection pooling techniques.",
+    "example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://replicaSetHost:27017/mydb', {\n  replicaSet: 'rs0',\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n});"
+  },
+  {
+    "level": 35,
+    "title": "Advanced Security Best Practices",
+    "description": "Secure your Express app by implementing Helmet, sanitizing inputs, and following OWASP guidelines to prevent attacks like XSS and CSRF.",
+    "example": "npm install helmet\n\nconst helmet = require('helmet');\napp.use(helmet());"
+  },
+  {
+    "level": 36,
+    "title": "Final Deployment and Scaling Strategy",
+    "description": "Deploy your production-ready Express app using Docker, Kubernetes, and cloud services like AWS or GCP while ensuring high availability and scalability.",
+    "example": "# Kubernetes example deployment\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: express-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: express\n  template:\n    metadata:\n      labels:\n        app: express\n    spec:\n      containers:\n        - name: express\n          image: your-docker-image:latest\n          ports:\n            - containerPort: 3000"
+  }
+
+        ]
+    },
+
+
+        "Programming-Concepts": {
+        "title": "Programming-Concepts",
+        "levels": 
+        [
+  {
+    "level": 1,
+    "title": "Algorithm",
+    "description": "An algorithm is a step-by-step set of instructions designed to solve a specific problem or perform a task. Algorithms form the foundation of computer programs.",
+    "example": "// Example: Algorithm to find the sum of two numbers\nfunction sum(a, b) {\n  return a + b;\n}\nconsole.log(sum(5, 3)); // Output: 8"
+  },
+  {
+    "level": 2,
+    "title": "Variable",
+    "description": "A variable is a container used to store data in a program. It allows you to label and manipulate data values.",
+    "example": "let name = 'Alice';\nconst age = 25;\nconsole.log(name, age);"
+  },
+  {
+    "level": 3,
+    "title": "Data Type",
+    "description": "Data types define the kind of data a variable can hold, such as numbers, strings, booleans, arrays, and objects.",
+    "example": "let number = 42; // Number\nlet text = 'Hello'; // String\nlet isActive = true; // Boolean\nlet list = [1, 2, 3]; // Array"
+  },
+  {
+    "level": 4,
+    "title": "Conditional Statement",
+    "description": "Conditional statements allow programs to make decisions based on conditions, typically using if, else if, and else.",
+    "example": "let score = 85;\nif (score >= 90) {\n  console.log('Grade A');\n} else if (score >= 75) {\n  console.log('Grade B');\n} else {\n  console.log('Grade C');\n}"
+  },
+  {
+    "level": 5,
+    "title": "Loop",
+    "description": "Loops are used to repeat a block of code multiple times until a certain condition is met.",
+    "example": "// Example: For loop\nfor (let i = 1; i <= 5; i++) {\n  console.log('Count:', i);\n}"
+  },
+  {
+    "level": 6,
+    "title": "Function",
+    "description": "A function is a reusable block of code that performs a specific task. Functions help keep code modular and organized.",
+    "example": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Bob'));"
+  },
+  {
+    "level": 7,
+    "title": "Array",
+    "description": "An array is a data structure that can store multiple values in a single variable. The values can be accessed by their index number.",
+    "example": "let fruits = ['Apple', 'Banana', 'Mango'];\nconsole.log(fruits[1]); // Output: Banana"
+  },
+  {
+    "level": 8,
+    "title": "Object",
+    "description": "An object stores data in key-value pairs and is used to represent complex data structures.",
+    "example": "let person = {\n  name: 'Alice',\n  age: 25,\n  isStudent: true\n};\nconsole.log(person.name); // Output: Alice"
+  },
+  {
+    "level": 9,
+    "title": "Class",
+    "description": "A class is a blueprint for creating objects with shared properties and methods. It is a core concept in object-oriented programming (OOP).",
+    "example": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    console.log(`${this.name} makes a sound`);\n  }\n}\n\nconst dog = new Animal('Dog');\ndog.speak(); // Output: Dog makes a sound"
+  },
+  {
+    "level": 10,
+    "title": "API",
+    "description": "An API (Application Programming Interface) defines how different software components should communicate with each other.",
+    "example": "// Fetching data from an API\nfetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data));"
+  },
+  {
+    "level": 11,
+    "title": "Recursion",
+    "description": "Recursion is a technique where a function calls itself to solve a smaller instance of the problem until it reaches a base case.",
+    "example": "function factorial(n) {\n  if (n === 1) return 1;\n  return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5)); // Output: 120"
+  },
+  {
+    "level": 12,
+    "title": "Asynchronous Programming",
+    "description": "Asynchronous programming allows a program to handle tasks like network requests without blocking the main thread, improving performance and responsiveness.",
+    "example": "setTimeout(() => {\n  console.log('This runs after 2 seconds');\n}, 2000);\nconsole.log('This runs immediately');"
+  },
+  {
+    "level": 13,
+    "title": "Promise",
+    "description": "A Promise represents a value that may be available now, later, or never. It is commonly used for handling asynchronous operations in JavaScript.",
+    "example": "let promise = new Promise((resolve, reject) => {\n  let success = true;\n  if (success) resolve('Operation succeeded');\n  else reject('Operation failed');\n});\n\npromise.then(console.log).catch(console.error);"
+  },
+  {
+    "level": 14,
+    "title": "Big O Notation",
+    "description": "Big O notation describes the efficiency of an algorithm in terms of time complexity and space complexity as the input size grows.",
+    "example": "// O(n) example\nfunction printItems(arr) {\n  arr.forEach(item => console.log(item));\n}"
+  },
+  {
+    "level": 15,
+    "title": "Hashing",
+    "description": "Hashing converts data into a fixed-size string, often used for storing passwords securely or indexing data efficiently.",
+    "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
+  },
+  {
+    "level": 16,
+    "title": "REST",
+    "description": "REST (Representational State Transfer) is an architectural style for designing networked APIs that use HTTP methods like GET, POST, PUT, and DELETE.",
+    "example": "GET /users\nPOST /users\nPUT /users/:id\nDELETE /users/:id"
+  },
+  {
+    "level": 17,
+    "title": "GraphQL",
+    "description": "GraphQL is a query language for APIs that allows clients to request only the data they need, reducing over-fetching.",
+    "example": "query {\n  user(id: 1) {\n    name\n    email\n  }\n}"
+  },
+  {
+    "level": 18,
+    "title": "Concurrency",
+    "description": "Concurrency is the ability of a system to execute multiple tasks at overlapping times without necessarily running them simultaneously.",
+    "example": "// JavaScript handles concurrency using the event loop\nsetTimeout(() => console.log('Task 1'), 1000);\nconsole.log('Task 2');"
+  },
+  {
+    "level": 19,
+    "title": "Multithreading",
+    "description": "Multithreading allows a program to run multiple threads in parallel, improving performance for CPU-intensive tasks.",
+    "example": "// In Node.js, you can use the worker_threads module\nconst { Worker } = require('worker_threads');\nnew Worker('./worker.js');"
+  },
+  {
+    "level": 20,
+    "title": "Containerization",
+    "description": "Containerization packages applications and their dependencies into isolated environments to ensure consistent deployments across systems. Docker is a popular containerization tool.",
+    "example": "# Dockerfile Example\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nCMD [\"node\", \"index.js\"]"
+  },
+
+
+  
+  {
+    "level": 21,
+    "title": "Stack",
+    "description": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. It is commonly used in function calls, undo operations, and expression evaluation.",
+    "example": "let stack = [];\nstack.push(1);\nstack.push(2);\nconsole.log(stack.pop()); // Output: 2"
+  },
+  {
+    "level": 22,
+    "title": "Queue",
+    "description": "A queue is a linear data structure that follows the First In, First Out (FIFO) principle. It is used in task scheduling and handling asynchronous data.",
+    "example": "let queue = [];\nqueue.push('Task 1');\nqueue.push('Task 2');\nconsole.log(queue.shift()); // Output: Task 1"
+  },
+  {
+    "level": 23,
+    "title": "Linked List",
+    "description": "A linked list is a linear data structure where elements (nodes) are connected using pointers, allowing dynamic memory allocation and efficient insertions/deletions.",
+    "example": "class Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nconst head = new Node(1);\nhead.next = new Node(2);\nhead.next.next = new Node(3);\nconsole.log(head.next.value); // Output: 2"
+  },
+  {
+    "level": 24,
+    "title": "Tree",
+    "description": "A tree is a hierarchical data structure consisting of nodes connected by edges, with one root node at the top. Trees are used in databases, file systems, and more.",
+    "example": "const tree = {\n  value: 'Root',\n  children: [\n    { value: 'Child 1', children: [] },\n    { value: 'Child 2', children: [] }\n  ]\n};\nconsole.log(tree.children[0].value); // Output: Child 1"
+  },
+  {
+    "level": 25,
+    "title": "Graph",
+    "description": "A graph is a data structure made up of nodes (vertices) and connections (edges). Graphs are used in social networks, maps, and recommendation systems.",
+    "example": "const graph = {\n  A: ['B', 'C'],\n  B: ['A', 'D'],\n  C: ['A', 'D'],\n  D: ['B', 'C']\n};\nconsole.log(graph['A']); // Output: ['B', 'C']"
+  },
+  {
+    "level": 26,
+    "title": "Binary Search",
+    "description": "Binary search is an efficient algorithm for finding a target value in a sorted array by repeatedly dividing the search range in half. Time complexity is O(log n).",
+    "example": "function binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  while (left <= right) {\n    let mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}\nconsole.log(binarySearch([1,2,3,4,5], 3)); // Output: 2"
+  },
+  {
+    "level": 27,
+    "title": "Sorting Algorithms",
+    "description": "Sorting algorithms arrange data in a specific order, such as ascending or descending. Examples include Bubble Sort, Merge Sort, and Quick Sort.",
+    "example": "// Example: JavaScript sort method\nlet arr = [5, 2, 8, 1];\narr.sort((a, b) => a - b);\nconsole.log(arr); // Output: [1, 2, 5, 8]"
+  },
+  {
+    "level": 28,
+    "title": "Hash Table",
+    "description": "A hash table is a data structure that maps keys to values for fast lookups using hash functions. It is the foundation of many programming languages' objects and dictionaries.",
+    "example": "let hashTable = new Map();\nhashTable.set('name', 'Alice');\nhashTable.set('age', 25);\nconsole.log(hashTable.get('name')); // Output: Alice"
+  },
+  {
+    "level": 29,
+    "title": "Dynamic Programming",
+    "description": "Dynamic programming is a technique for solving problems by breaking them down into simpler overlapping subproblems and storing solutions to avoid repeated calculations.",
+    "example": "function fibonacci(n, memo = {}) {\n  if (n <= 1) return n;\n  if (memo[n]) return memo[n];\n  memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo);\n  return memo[n];\n}\nconsole.log(fibonacci(6)); // Output: 8"
+  },
+  {
+    "level": 30,
+    "title": "Greedy Algorithm",
+    "description": "A greedy algorithm builds up a solution piece by piece, always choosing the option that offers the most immediate benefit.",
+    "example": "// Example: Coin change problem\nlet coins = [1, 5, 10, 25];\nlet amount = 37;\nlet count = 0;\nfor (let i = coins.length - 1; i >= 0; i--) {\n  while (amount >= coins[i]) {\n    amount -= coins[i];\n    count++;\n  }\n}\nconsole.log(count); // Output: 4"
+  },
+  {
+    "level": 31,
+    "title": "Design Patterns",
+    "description": "Design patterns are common solutions to recurring software design problems. Examples include Singleton, Observer, and Factory patterns.",
+    "example": "// Singleton pattern example\nclass Singleton {\n  constructor() {\n    if (!Singleton.instance) {\n      Singleton.instance = this;\n    }\n    return Singleton.instance;\n  }\n}\nconst instance1 = new Singleton();\nconst instance2 = new Singleton();\nconsole.log(instance1 === instance2); // Output: true"
+  },
+  {
+    "level": 32,
+    "title": "Observer Pattern",
+    "description": "The Observer pattern allows objects to subscribe to changes in another object, enabling reactive programming.",
+    "example": "class Subject {\n  constructor() {\n    this.observers = [];\n  }\n  subscribe(observer) {\n    this.observers.push(observer);\n  }\n  notify(data) {\n    this.observers.forEach(obs => obs(data));\n  }\n}\n\nconst subject = new Subject();\nsubject.subscribe(data => console.log('Observer 1:', data));\nsubject.notify('Update received');"
+  },
+  {
+    "level": 33,
+    "title": "Microservices",
+    "description": "Microservices architecture splits a large application into smaller, independent services that communicate over APIs, making systems scalable and easier to maintain.",
+    "example": "GET /users-service/api/users\nGET /orders-service/api/orders"
+  },
+  {
+    "level": 34,
+    "title": "Load Balancing",
+    "description": "Load balancing distributes incoming network traffic across multiple servers to ensure reliability and performance.",
+    "example": "Example: A reverse proxy like Nginx distributing requests\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://backend_servers;\n  }\n}"
+  },
+  {
+    "level": 35,
+    "title": "Caching",
+    "description": "Caching stores frequently accessed data in memory to improve performance and reduce database load.",
+    "example": "// Example using Redis in Node.js\nconst redis = require('redis');\nconst client = redis.createClient();\nclient.set('user:1', JSON.stringify({ name: 'Alice', age: 25 }));\nclient.get('user:1', (err, data) => {\n  console.log(JSON.parse(data));\n});"
+  },
+  {
+    "level": 36,
+    "title": "Distributed Systems",
+    "description": "A distributed system is a network of independent computers that work together as a single system, often used for scalability and fault tolerance.",
+    "example": "Examples: Google Search, Netflix Streaming, AWS Cloud"
+  },
+  {
+    "level": 37,
+    "title": "Event-Driven Architecture",
+    "description": "In event-driven architecture, services communicate by producing and consuming events, allowing for loose coupling and asynchronous communication.",
+    "example": "// Example with Node.js EventEmitter\nconst EventEmitter = require('events');\nconst eventEmitter = new EventEmitter();\neventEmitter.on('orderPlaced', (order) => console.log('Order received:', order));\neventEmitter.emit('orderPlaced', { id: 1, item: 'Laptop' });"
+  },
+  {
+    "level": 38,
+    "title": "CI/CD",
+    "description": "Continuous Integration (CI) and Continuous Deployment (CD) are practices for automatically testing and deploying code to production environments.",
+    "example": "GitHub Actions Example:\nname: CI Pipeline\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - run: npm install\n      - run: npm test"
+  },
+  {
+    "level": 39,
+    "title": "Containers and Kubernetes",
+    "description": "Containers package applications with their dependencies. Kubernetes manages containerized applications at scale, handling deployments, scaling, and networking.",
+    "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
+  },
+  {
+    "level": 40,
+    "title": "Machine Learning Basics",
+    "description": "Machine learning enables software to learn from data and make predictions without explicit programming. Common algorithms include linear regression and decision trees.",
+    "example": "// Example: Predicting house price with pseudo-code\ntrainModel(data)\npredict(inputData) -> predictedPrice"
+  },
+
+
+  
+  {
+    "level": 41,
+    "title": "Cloud Computing",
+    "description": "Cloud computing provides access to computing resources such as servers, storage, databases, and networking over the internet. It enables on-demand scalability and pay-as-you-go pricing.",
+    "example": "Examples of Cloud Providers:\n- AWS (Amazon Web Services)\n- Microsoft Azure\n- Google Cloud Platform (GCP)"
+  },
+  {
+    "level": 42,
+    "title": "IaaS, PaaS, SaaS",
+    "description": "These are cloud service models. IaaS (Infrastructure as a Service) provides hardware resources, PaaS (Platform as a Service) offers a development environment, and SaaS (Software as a Service) delivers complete applications over the internet.",
+    "example": "IaaS: AWS EC2\nPaaS: Google App Engine\nSaaS: Gmail, Dropbox"
+  },
+  {
+    "level": 43,
+    "title": "Serverless Computing",
+    "description": "Serverless computing allows developers to run code without managing servers. Cloud providers automatically allocate resources and scale as needed.",
+    "example": "AWS Lambda Example:\nexports.handler = async (event) => {\n  return { statusCode: 200, body: 'Hello Serverless!' };\n};"
+  },
+  {
+    "level": 44,
+    "title": "Virtualization",
+    "description": "Virtualization allows multiple virtual machines (VMs) to run on a single physical server, optimizing resource usage and improving flexibility.",
+    "example": "Examples: VMware, VirtualBox, Hyper-V"
+  },
+  {
+    "level": 45,
+    "title": "API Gateway",
+    "description": "An API Gateway manages and routes API requests between clients and microservices, handling authentication, logging, and rate limiting.",
+    "example": "Example:\nClient -> API Gateway -> Microservice 1\n                      -> Microservice 2"
+  },
+  {
+    "level": 46,
+    "title": "Message Queue",
+    "description": "A message queue helps services communicate asynchronously by passing messages. It improves scalability and reliability.",
+    "example": "Popular Tools: RabbitMQ, Kafka, AWS SQS"
+  },
+  {
+    "level": 47,
+    "title": "CDN (Content Delivery Network)",
+    "description": "A CDN stores cached copies of content on servers distributed worldwide, improving website performance and reducing latency.",
+    "example": "Examples: Cloudflare, AWS CloudFront, Akamai"
+  },
+  {
+    "level": 48,
+    "title": "WebSocket",
+    "description": "WebSockets provide a persistent, two-way communication channel between client and server, ideal for real-time applications like chat or live updates.",
+    "example": "const socket = new WebSocket('ws://example.com');\nsocket.onmessage = (event) => console.log(event.data);"
+  },
+  {
+    "level": 49,
+    "title": "OAuth 2.0",
+    "description": "OAuth 2.0 is an authentication framework that allows secure access to resources without sharing passwords, commonly used for social logins.",
+    "example": "Example:\n1. User logs in with Google.\n2. Google issues a token.\n3. Your app uses token to access user's data securely."
+  },
+  {
+    "level": 50,
+    "title": "JWT (JSON Web Token)",
+    "description": "JWT is a compact token format used to securely transmit information between parties, often used for authentication and authorization.",
+    "example": "const jwt = require('jsonwebtoken');\nconst token = jwt.sign({ userId: 1 }, 'secretKey');\nconsole.log(token);"
+  },
+  {
+    "level": 51,
+    "title": "Encryption",
+    "description": "Encryption converts data into an unreadable format to protect it from unauthorized access. Common algorithms include AES and RSA.",
+    "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
+  },
+  {
+    "level": 52,
+    "title": "SSL/TLS",
+    "description": "SSL/TLS protocols secure communication over the internet using encryption, ensuring privacy and data integrity.",
+    "example": "HTTPS = HTTP + SSL/TLS"
+  },
+  {
+    "level": 53,
+    "title": "Firewall",
+    "description": "A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+    "example": "Example:\nAllow traffic on port 80 (HTTP) and 443 (HTTPS) only."
+  },
+  {
+    "level": 54,
+    "title": "Zero Trust Security",
+    "description": "Zero Trust is a security model where no user or system is trusted by default, requiring continuous verification of identity and permissions.",
+    "example": "Every request must be authenticated and authorized, regardless of location."
+  },
+  {
+    "level": 55,
+    "title": "Blockchain",
+    "description": "Blockchain is a decentralized, distributed ledger technology that securely records transactions without a central authority.",
+    "example": "Example:\nBitcoin and Ethereum are blockchain-based cryptocurrencies."
+  },
+  {
+    "level": 56,
+    "title": "Smart Contract",
+    "description": "Smart contracts are self-executing contracts with terms directly written into code, running on blockchain networks like Ethereum.",
+    "example": "pragma solidity ^0.8.0;\ncontract HelloWorld {\n  string public message = 'Hello, Blockchain!';\n}"
+  },
+  {
+    "level": 57,
+    "title": "Consensus Algorithm",
+    "description": "Consensus algorithms enable distributed networks to agree on a single version of the truth. Popular methods include Proof of Work (PoW) and Proof of Stake (PoS).",
+    "example": "Bitcoin uses Proof of Work to validate transactions."
+  },
+  {
+    "level": 58,
+    "title": "Distributed Ledger",
+    "description": "A distributed ledger is a database replicated across multiple nodes to ensure transparency and tamper-resistance.",
+    "example": "Every participant has an identical copy of the data."
+  },
+  {
+    "level": 59,
+    "title": "Docker",
+    "description": "Docker is a platform for developing, shipping, and running applications inside lightweight, portable containers.",
+    "example": "# Build and run a Docker container\nFROM node:18-alpine\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"node\", \"index.js\"]"
+  },
+  {
+    "level": 60,
+    "title": "Kubernetes",
+    "description": "Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.",
+    "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
+  },
+  {
+    "level": 61,
+    "title": "Load Testing",
+    "description": "Load testing measures how an application performs under high traffic, helping identify bottlenecks and optimize performance.",
+    "example": "Tools: Apache JMeter, Locust, k6"
+  },
+  {
+    "level": 62,
+    "title": "Rate Limiting",
+    "description": "Rate limiting controls the number of requests a user can make to an API within a given time to prevent abuse and ensure stability.",
+    "example": "Example:\nLimit each user to 100 requests per minute."
+  },
+  {
+    "level": 63,
+    "title": "Edge Computing",
+    "description": "Edge computing brings computation and data storage closer to the user or device, reducing latency and improving speed.",
+    "example": "Use cases: IoT devices, autonomous vehicles."
+  },
+  {
+    "level": 64,
+    "title": "Machine Learning Operations (MLOps)",
+    "description": "MLOps is the practice of deploying, monitoring, and maintaining machine learning models in production environments.",
+    "example": "Pipeline:\n1. Model Training\n2. Model Deployment\n3. Monitoring Performance"
+  },
+  {
+    "level": 65,
+    "title": "Artificial Intelligence",
+    "description": "Artificial Intelligence (AI) is the simulation of human intelligence by machines, allowing them to learn, reason, and make decisions.",
+    "example": "Applications:\n- Chatbots\n- Self-driving cars\n- Recommendation systems"
+  },
+  {
+    "level": 66,
+    "title": "Neural Networks",
+    "description": "Neural networks are algorithms inspired by the human brain, used in deep learning to recognize patterns and process complex data.",
+    "example": "Example frameworks: TensorFlow, PyTorch"
+  },
+  {
+    "level": 67,
+    "title": "Deep Learning",
+    "description": "Deep learning is a subset of machine learning using multi-layer neural networks for tasks like image recognition and natural language processing.",
+    "example": "Use case: Detecting objects in images."
+  },
+  {
+    "level": 68,
+    "title": "Big Data",
+    "description": "Big data involves processing and analyzing massive datasets that are too large for traditional tools to handle efficiently.",
+    "example": "Technologies: Hadoop, Apache Spark, Google BigQuery"
+  },
+  {
+    "level": 69,
+    "title": "Data Lake",
+    "description": "A data lake is a centralized repository for storing large volumes of raw data in various formats for future processing and analysis.",
+    "example": "AWS S3 is commonly used as a data lake storage solution."
+  },
+  {
+    "level": 70,
+    "title": "Data Warehouse",
+    "description": "A data warehouse stores structured, processed data optimized for business intelligence and analytics.",
+    "example": "Examples: Amazon Redshift, Snowflake, Google BigQuery"
+  },
+  {
+    "level": 71,
+    "title": "DevSecOps",
+    "description": "DevSecOps integrates security practices into DevOps workflows to ensure security is addressed throughout the development lifecycle.",
+    "example": "Security checks are run automatically during CI/CD pipeline."
+  },
+  {
+    "level": 72,
+    "title": "Web Assembly (WASM)",
+    "description": "WebAssembly is a binary instruction format that enables running high-performance applications in web browsers.",
+    "example": "Use case: Running C++ code in a browser."
+  },
+  {
+    "level": 73,
+    "title": "Quantum Computing",
+    "description": "Quantum computing uses principles of quantum mechanics to perform complex computations much faster than classical computers.",
+    "example": "Quantum algorithms like Shor's algorithm can factor large numbers exponentially faster."
+  },
+  {
+    "level": 74,
+    "title": "Federated Learning",
+    "description": "Federated learning is a machine learning approach where data remains on local devices, and only model updates are shared, enhancing privacy.",
+    "example": "Used by Google Keyboard to improve predictions without sending user data."
+  },
+  {
+    "level": 75,
+    "title": "Web 3.0",
+    "description": "Web 3.0 is the decentralized web that aims to give users more control over their data using blockchain and peer-to-peer networks.",
+    "example": "Examples: Decentralized apps (dApps), IPFS"
+  }
+
+
+]
+        }
 }

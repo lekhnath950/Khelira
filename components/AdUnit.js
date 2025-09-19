@@ -16,7 +16,7 @@ const AdUnit = ({ slotId, adFormat = "auto", responsive = true }) => {
     <ins
       className="adsbygoogle"
       style={{ display: "block" }}
-      data-ad-client="ca-pub-8017840986434846" // Replace with your AdSense publisher ID
+      data-ad-client="ca-pub-8017840986434846"
       data-ad-slot={slotId}
       data-ad-format={adFormat}
       data-full-width-responsive={responsive ? "true" : "false"}
