@@ -115,7 +115,128 @@
                 "title": "Best Practices",
                 "description": "Some rules to follow:\n\n- Always close tags\n- Use lowercase for tags\n- Keep code neat and clean\n- Use semantic tags\n- Add `alt` text for images",
                 "example": "<!DOCTYPE html>\n<html>\n<head><title>Good Practice</title></head>\n<body>\n  <header>\n    <h1>My Website</h1>\n  </header>\n  <main>\n    <p>This is clean and simple code.</p>\n  </main>\n</body>\n</html>"
-            }
+            },
+            {
+    "level": 21,
+    "title": "HTML Attributes",
+    "description": "Attributes provide **extra information** about elements. Example attributes include:\n\n- `id` → unique identifier\n- `class` → group for styling\n- `style` → inline CSS\n- `title` → tooltip text",
+    "example": "<p id='intro' class='highlight' title='Hello!'>Hover over me to see tooltip.</p>"
+},
+{
+    "level": 22,
+    "title": "Block vs Inline Elements",
+    "description": "HTML elements are either:\n\n- **Block-level** → start on a new line (e.g., `<div>`, `<p>`, `<h1>`) \n- **Inline-level** → stay in line (e.g., `<span>`, `<a>`, `<strong>`)",
+    "example": "<p>This is a <span style='color:blue;'>blue word</span> inside a paragraph.</p>"
+},
+{
+    "level": 23,
+    "title": "Inline vs External CSS",
+    "description": "There are 3 ways to style HTML:\n\n1. **Inline CSS** → style directly in the tag.\n2. **Internal CSS** → inside `<style>` tag in `<head>`.\n3. **External CSS** → linked `.css` file using `<link>` tag.",
+    "example": "<head>\n  <link rel='stylesheet' href='styles.css'>\n</head>"
+},
+{
+    "level": 24,
+    "title": "HTML Forms Validation",
+    "description": "You can validate form inputs using HTML alone:\n\n- `required` → must be filled\n- `pattern` → regex check\n- `min` / `max` → number limits\n- `maxlength` → character limit",
+    "example": "<form>\n  Email: <input type='email' required><br>\n  Age: <input type='number' min='18' max='60'><br>\n  <button>Submit</button>\n</form>"
+},
+{
+    "level": 25,
+    "title": "HTML5 Input Types",
+    "description": "HTML5 introduced new input types for better user experience:\n\n- `color`\n- `range`\n- `file`\n- `search`\n- `url`\n- `tel`",
+    "example": "<form>\n  Favorite Color: <input type='color'><br>\n  Search: <input type='search'><br>\n  Website: <input type='url'>\n</form>"
+},
+{
+    "level": 26,
+    "title": "Media Embedding",
+    "description": "You can embed content from other platforms like YouTube or Google Maps using `<iframe>`.",
+    "example": "<iframe width='560' height='315' src='https://www.youtube.com/embed/dQw4w9WgXcQ' allowfullscreen></iframe>"
+},
+{
+    "level": 27,
+    "title": "HTML5 Data Attributes",
+    "description": "Custom `data-*` attributes store extra information on elements. These can be accessed via JavaScript.",
+    "example": "<button data-user='Sagar' data-level='Pro'>Click Me</button>"
+},
+{
+    "level": 28,
+    "title": "HTML5 Local Storage",
+    "description": "`localStorage` lets you **store data in the browser** that stays even after refreshing or closing the page.",
+    "example": "<script>\n  localStorage.setItem('username', 'Sagar');\n  console.log(localStorage.getItem('username')); // Output: Sagar\n</script>"
+},
+{
+    "level": 29,
+    "title": "HTML5 Session Storage",
+    "description": "`sessionStorage` is similar to localStorage but data **goes away when the browser is closed**.",
+    "example": "<script>\n  sessionStorage.setItem('theme', 'dark');\n  console.log(sessionStorage.getItem('theme')); // Output: dark\n</script>"
+},
+{
+    "level": 30,
+    "title": "HTML Accessibility Basics",
+    "description": "Accessibility helps people with disabilities use websites. Common practices:\n\n- Use `alt` for images\n- Add `aria-label` for screen readers\n- Use proper heading hierarchy `<h1> - <h6>`",
+    "example": "<button aria-label='Play video'>▶</button>"
+},
+{
+    "level": 31,
+    "title": "HTML5 Canvas Advanced",
+    "description": "The `<canvas>` element lets you **draw graphics and animations** using JavaScript.",
+    "example": "<canvas id='myCanvas' width='200' height='100'></canvas>\n<script>\n  const canvas = document.getElementById('myCanvas');\n  const ctx = canvas.getContext('2d');\n  ctx.fillStyle = 'blue';\n  ctx.fillRect(10, 10, 150, 80);\n</script>"
+},
+{
+    "level": 32,
+    "title": "HTML5 Geolocation API",
+    "description": "Geolocation API lets you **get the user's location** if they allow permission.",
+    "example": "<script>\n  navigator.geolocation.getCurrentPosition(function(position) {\n    console.log('Latitude:', position.coords.latitude);\n    console.log('Longitude:', position.coords.longitude);\n  });\n</script>"
+},
+{
+    "level": 33,
+    "title": "HTML5 Drag and Drop",
+    "description": "HTML5 supports drag-and-drop features for interactive UIs.",
+    "example": "<div draggable='true' style='width:100px;height:100px;background:red;'>Drag Me</div>"
+},
+{
+    "level": 34,
+    "title": "HTML5 Audio API",
+    "description": "Control audio programmatically with JavaScript using the HTML5 Audio API.",
+    "example": "<audio id='myAudio' src='song.mp3'></audio>\n<script>\n  document.getElementById('myAudio').play();\n</script>"
+},
+{
+    "level": 35,
+    "title": "HTML5 Video with Captions",
+    "description": "You can add captions to videos using `<track>` tag.",
+    "example": "<video controls>\n  <source src='movie.mp4' type='video/mp4'>\n  <track src='captions.vtt' kind='subtitles' srclang='en' label='English'>\n</video>"
+},
+{
+    "level": 36,
+    "title": "HTML SEO Basics",
+    "description": "SEO (Search Engine Optimization) helps your website rank higher on Google. Best practices include:\n\n- Use `<meta name='description'>`\n- Proper heading structure\n- Alt text for images\n- Semantic tags",
+    "example": "<head>\n  <meta name='description' content='Learn HTML basics and advanced concepts.'>\n</head>"
+},
+{
+    "level": 37,
+    "title": "Responsive Web Design",
+    "description": "Use the `<meta viewport>` and CSS techniques like **flexbox** and **media queries** to make websites mobile-friendly.",
+    "example": "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n<style>\n  @media (max-width: 600px) {\n    body { background: lightblue; }\n  }\n</style>"
+},
+{
+    "level": 38,
+    "title": "HTML Best Practices (Advanced)",
+    "description": "Follow these advanced rules for better HTML:\n\n- Use `aria-` attributes for accessibility\n- Keep structure semantic and minimal\n- Validate your HTML using W3C Validator\n- Optimize media with modern formats like WebP",
+    "example": "<img src='image.webp' alt='Optimized image'>"
+},
+{
+    "level": 39,
+    "title": "Progressive Web App (PWA) Basics",
+    "description": "HTML combined with JavaScript and service workers can create **PWA apps** that work offline and feel like native apps.",
+    "example": "<link rel='manifest' href='/manifest.json'>"
+},
+{
+    "level": 40,
+    "title": "Final HTML Project",
+    "description": "Build a full-featured HTML project with:\n\n- Navigation bar\n- Form with validation\n- Video and audio player\n- Responsive layout\n- LocalStorage support",
+    "example": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset='UTF-8'>\n  <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n  <title>My Final Project</title>\n</head>\n<body>\n  <header><h1>My Site</h1></header>\n  <main>\n    <form>\n      <input type='text' required placeholder='Enter your name'>\n    </form>\n  </main>\n</body>\n</html>"
+}
+
         ]
     },
     "css": {
@@ -1064,571 +1185,652 @@
                 "description": "Deploy your Express app to platforms like Heroku, AWS, or Vercel by setting up production scripts and environment variables.",
                 "example": "// package.json\n\"scripts\": {\n  \"start\": \"node index.js\",\n  \"dev\": \"nodemon index.js\"\n}\n\n// Deploy to Heroku\nheroku create\nheroku config:set NODE_ENV=production\nheroku git:remote -a your-app-name\nheroku push origin main"
             },
-
-            
-  {
-    "level": 21,
-    "title": "Cluster Mode for Scaling",
-    "description": "Node.js runs on a single thread by default. Express apps can use the Node.js 'cluster' module to run multiple instances across CPU cores, improving performance and handling more concurrent requests.",
-    "example": "const cluster = require('cluster');\nconst os = require('os');\n\nif (cluster.isMaster) {\n  const cpuCount = os.cpus().length;\n  for (let i = 0; i < cpuCount; i++) {\n    cluster.fork();\n  }\n  cluster.on('exit', () => cluster.fork());\n} else {\n  const express = require('express');\n  const app = express();\n  app.get('/', (req, res) => res.send('Clustered Express App'));\n  app.listen(3000);\n}"
-  },
-  {
-    "level": 22,
-    "title": "Load Balancing Express Apps",
-    "description": "Distribute traffic across multiple Express app instances using a reverse proxy or load balancer like Nginx or PM2 to improve reliability and uptime.",
-    "example": "# Example Nginx config\nupstream express_cluster {\n  server 127.0.0.1:3000;\n  server 127.0.0.1:3001;\n}\n\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://express_cluster;\n  }\n}"
-  },
-  {
-    "level": 23,
-    "title": "Using PM2 for Process Management",
-    "description": "PM2 is a production process manager for Node.js applications that helps manage multiple instances, load balancing, logging, and auto-restarts.",
-    "example": "npm install pm2 -g\n\n# Start app with PM2\npm2 start index.js -i max\n\n# Monitor app\npm2 logs\npm2 monit"
-  },
-  {
-    "level": 24,
-    "title": "Microservices with Express",
-    "description": "Break large monolithic apps into smaller microservices, each handling a specific domain or functionality. This improves scalability and code maintainability.",
-    "example": "// user-service.js\nconst express = require('express');\nconst app = express();\n\napp.get('/users', (req, res) => res.json([{ id: 1, name: 'Alice' }]));\n\napp.listen(4000, () => console.log('User service running on port 4000'));\n\n// API Gateway can route requests to different services."
-  },
-  {
-    "level": 25,
-    "title": "API Gateway Integration",
-    "description": "An API gateway acts as a single entry point for clients and routes requests to different microservices, handling authentication, rate-limiting, and logging.",
-    "example": "const express = require('express');\nconst app = express();\nconst proxy = require('http-proxy-middleware');\n\napp.use('/users', proxy.createProxyMiddleware({ target: 'http://localhost:4000', changeOrigin: true }));\n\napp.listen(3000, () => console.log('API Gateway running on port 3000'));"
-  },
-  {
-    "level": 26,
-    "title": "Message Queues with Express",
-    "description": "Use message brokers like RabbitMQ or Kafka to enable asynchronous communication between services, preventing bottlenecks in your Express app.",
-    "example": "npm install amqplib\n\nconst amqp = require('amqplib');\n\nasync function sendMessage() {\n  const connection = await amqp.connect('amqp://localhost');\n  const channel = await connection.createChannel();\n  await channel.assertQueue('tasks');\n  channel.sendToQueue('tasks', Buffer.from('Process this task'));\n  console.log('Message sent');\n}\n\nsendMessage();"
-  },
-  {
-    "level": 27,
-    "title": "Caching with Redis",
-    "description": "Improve performance by caching frequently requested data using Redis. This reduces database load and response time for repetitive queries.",
-    "example": "npm install redis\n\nconst redis = require('redis');\nconst client = redis.createClient();\n\nclient.connect();\n\napp.get('/data', async (req, res) => {\n  const cachedData = await client.get('data');\n  if (cachedData) return res.json(JSON.parse(cachedData));\n\n  const freshData = { message: 'Fresh data' };\n  await client.set('data', JSON.stringify(freshData));\n  res.json(freshData);\n});"
-  },
-  {
-    "level": 28,
-    "title": "WebSockets for Real-Time Features",
-    "description": "Add real-time capabilities like live chat, notifications, or tracking using WebSockets with libraries like Socket.IO.",
-    "example": "const http = require('http');\nconst socketIo = require('socket.io');\n\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', socket => {\n  console.log('New client connected');\n  socket.on('message', msg => io.emit('message', msg));\n});\n\nserver.listen(3000);"
-  },
-  {
-    "level": 29,
-    "title": "GraphQL with Express",
-    "description": "Integrate GraphQL into your Express app to create flexible APIs with strongly typed schemas and resolvers.",
-    "example": "npm install express-graphql graphql\n\nconst { graphqlHTTP } = require('express-graphql');\nconst { buildSchema } = require('graphql');\n\nconst schema = buildSchema(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = { hello: () => 'Hello, GraphQL!' };\n\napp.use('/graphql', graphqlHTTP({ schema, rootValue: root, graphiql: true }));"
-  },
-  {
-    "level": 30,
-    "title": "Dockerizing Express Apps",
-    "description": "Containerize your Express app using Docker to ensure consistent deployments across different environments.",
-    "example": "# Dockerfile\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"index.js\"]"
-  },
-  {
-    "level": 31,
-    "title": "CI/CD Pipeline for Express",
-    "description": "Automate testing, building, and deploying your Express app using CI/CD tools like GitHub Actions, GitLab CI, or Jenkins.",
-    "example": "name: Express CI/CD\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test"
-  },
-  {
-    "level": 32,
-    "title": "Server-Side Rendering (SSR)",
-    "description": "Use Express to serve pre-rendered HTML for SEO-friendly and faster-loading pages, often paired with frontend frameworks like React or Next.js.",
-    "example": "app.get('/', (req, res) => {\n  const html = `<html><head><title>SSR Example</title></head><body><h1>Hello from SSR</h1></body></html>`;\n  res.send(html);\n});"
-  },
-  {
-    "level": 33,
-    "title": "Monitoring and Performance Metrics",
-    "description": "Monitor your Express app's performance using tools like New Relic, Datadog, or Prometheus to identify bottlenecks and improve response times.",
-    "example": "npm install express-status-monitor\n\nconst monitor = require('express-status-monitor');\napp.use(monitor());"
-  },
-  {
-    "level": 34,
-    "title": "Scaling Databases for Express",
-    "description": "Learn how to scale your database to handle high traffic using read replicas, sharding, and connection pooling techniques.",
-    "example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://replicaSetHost:27017/mydb', {\n  replicaSet: 'rs0',\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n});"
-  },
-  {
-    "level": 35,
-    "title": "Advanced Security Best Practices",
-    "description": "Secure your Express app by implementing Helmet, sanitizing inputs, and following OWASP guidelines to prevent attacks like XSS and CSRF.",
-    "example": "npm install helmet\n\nconst helmet = require('helmet');\napp.use(helmet());"
-  },
-  {
-    "level": 36,
-    "title": "Final Deployment and Scaling Strategy",
-    "description": "Deploy your production-ready Express app using Docker, Kubernetes, and cloud services like AWS or GCP while ensuring high availability and scalability.",
-    "example": "# Kubernetes example deployment\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: express-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: express\n  template:\n    metadata:\n      labels:\n        app: express\n    spec:\n      containers:\n        - name: express\n          image: your-docker-image:latest\n          ports:\n            - containerPort: 3000"
-  }
-
+            {
+                "level": 21,
+                "title": "Cluster Mode for Scaling",
+                "description": "Node.js runs on a single thread by default. Express apps can use the Node.js 'cluster' module to run multiple instances across CPU cores, improving performance and handling more concurrent requests.",
+                "example": "const cluster = require('cluster');\nconst os = require('os');\n\nif (cluster.isMaster) {\n  const cpuCount = os.cpus().length;\n  for (let i = 0; i < cpuCount; i++) {\n    cluster.fork();\n  }\n  cluster.on('exit', () => cluster.fork());\n} else {\n  const express = require('express');\n  const app = express();\n  app.get('/', (req, res) => res.send('Clustered Express App'));\n  app.listen(3000);\n}"
+            },
+            {
+                "level": 22,
+                "title": "Load Balancing Express Apps",
+                "description": "Distribute traffic across multiple Express app instances using a reverse proxy or load balancer like Nginx or PM2 to improve reliability and uptime.",
+                "example": "# Example Nginx config\nupstream express_cluster {\n  server 127.0.0.1:3000;\n  server 127.0.0.1:3001;\n}\n\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://express_cluster;\n  }\n}"
+            },
+            {
+                "level": 23,
+                "title": "Using PM2 for Process Management",
+                "description": "PM2 is a production process manager for Node.js applications that helps manage multiple instances, load balancing, logging, and auto-restarts.",
+                "example": "npm install pm2 -g\n\n# Start app with PM2\npm2 start index.js -i max\n\n# Monitor app\npm2 logs\npm2 monit"
+            },
+            {
+                "level": 24,
+                "title": "Microservices with Express",
+                "description": "Break large monolithic apps into smaller microservices, each handling a specific domain or functionality. This improves scalability and code maintainability.",
+                "example": "// user-service.js\nconst express = require('express');\nconst app = express();\n\napp.get('/users', (req, res) => res.json([{ id: 1, name: 'Alice' }]));\n\napp.listen(4000, () => console.log('User service running on port 4000'));\n\n// API Gateway can route requests to different services."
+            },
+            {
+                "level": 25,
+                "title": "API Gateway Integration",
+                "description": "An API gateway acts as a single entry point for clients and routes requests to different microservices, handling authentication, rate-limiting, and logging.",
+                "example": "const express = require('express');\nconst app = express();\nconst proxy = require('http-proxy-middleware');\n\napp.use('/users', proxy.createProxyMiddleware({ target: 'http://localhost:4000', changeOrigin: true }));\n\napp.listen(3000, () => console.log('API Gateway running on port 3000'));"
+            },
+            {
+                "level": 26,
+                "title": "Message Queues with Express",
+                "description": "Use message brokers like RabbitMQ or Kafka to enable asynchronous communication between services, preventing bottlenecks in your Express app.",
+                "example": "npm install amqplib\n\nconst amqp = require('amqplib');\n\nasync function sendMessage() {\n  const connection = await amqp.connect('amqp://localhost');\n  const channel = await connection.createChannel();\n  await channel.assertQueue('tasks');\n  channel.sendToQueue('tasks', Buffer.from('Process this task'));\n  console.log('Message sent');\n}\n\nsendMessage();"
+            },
+            {
+                "level": 27,
+                "title": "Caching with Redis",
+                "description": "Improve performance by caching frequently requested data using Redis. This reduces database load and response time for repetitive queries.",
+                "example": "npm install redis\n\nconst redis = require('redis');\nconst client = redis.createClient();\n\nclient.connect();\n\napp.get('/data', async (req, res) => {\n  const cachedData = await client.get('data');\n  if (cachedData) return res.json(JSON.parse(cachedData));\n\n  const freshData = { message: 'Fresh data' };\n  await client.set('data', JSON.stringify(freshData));\n  res.json(freshData);\n});"
+            },
+            {
+                "level": 28,
+                "title": "WebSockets for Real-Time Features",
+                "description": "Add real-time capabilities like live chat, notifications, or tracking using WebSockets with libraries like Socket.IO.",
+                "example": "const http = require('http');\nconst socketIo = require('socket.io');\n\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', socket => {\n  console.log('New client connected');\n  socket.on('message', msg => io.emit('message', msg));\n});\n\nserver.listen(3000);"
+            },
+            {
+                "level": 29,
+                "title": "GraphQL with Express",
+                "description": "Integrate GraphQL into your Express app to create flexible APIs with strongly typed schemas and resolvers.",
+                "example": "npm install express-graphql graphql\n\nconst { graphqlHTTP } = require('express-graphql');\nconst { buildSchema } = require('graphql');\n\nconst schema = buildSchema(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = { hello: () => 'Hello, GraphQL!' };\n\napp.use('/graphql', graphqlHTTP({ schema, rootValue: root, graphiql: true }));"
+            },
+            {
+                "level": 30,
+                "title": "Dockerizing Express Apps",
+                "description": "Containerize your Express app using Docker to ensure consistent deployments across different environments.",
+                "example": "# Dockerfile\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"index.js\"]"
+            },
+            {
+                "level": 31,
+                "title": "CI/CD Pipeline for Express",
+                "description": "Automate testing, building, and deploying your Express app using CI/CD tools like GitHub Actions, GitLab CI, or Jenkins.",
+                "example": "name: Express CI/CD\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test"
+            },
+            {
+                "level": 32,
+                "title": "Server-Side Rendering (SSR)",
+                "description": "Use Express to serve pre-rendered HTML for SEO-friendly and faster-loading pages, often paired with frontend frameworks like React or Next.js.",
+                "example": "app.get('/', (req, res) => {\n  const html = `<html><head><title>SSR Example</title></head><body><h1>Hello from SSR</h1></body></html>`;\n  res.send(html);\n});"
+            },
+            {
+                "level": 33,
+                "title": "Monitoring and Performance Metrics",
+                "description": "Monitor your Express app's performance using tools like New Relic, Datadog, or Prometheus to identify bottlenecks and improve response times.",
+                "example": "npm install express-status-monitor\n\nconst monitor = require('express-status-monitor');\napp.use(monitor());"
+            },
+            {
+                "level": 34,
+                "title": "Scaling Databases for Express",
+                "description": "Learn how to scale your database to handle high traffic using read replicas, sharding, and connection pooling techniques.",
+                "example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://replicaSetHost:27017/mydb', {\n  replicaSet: 'rs0',\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n});"
+            },
+            {
+                "level": 35,
+                "title": "Advanced Security Best Practices",
+                "description": "Secure your Express app by implementing Helmet, sanitizing inputs, and following OWASP guidelines to prevent attacks like XSS and CSRF.",
+                "example": "npm install helmet\n\nconst helmet = require('helmet');\napp.use(helmet());"
+            },
+            {
+                "level": 36,
+                "title": "Final Deployment and Scaling Strategy",
+                "description": "Deploy your production-ready Express app using Docker, Kubernetes, and cloud services like AWS or GCP while ensuring high availability and scalability.",
+                "example": "# Kubernetes example deployment\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: express-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: express\n  template:\n    metadata:\n      labels:\n        app: express\n    spec:\n      containers:\n        - name: express\n          image: your-docker-image:latest\n          ports:\n            - containerPort: 3000"
+            }
         ]
     },
-
-
-        "Programming-Concepts": {
-        "title": "Programming-Concepts",
-        "levels": 
-        [
-  {
-    "level": 1,
-    "title": "Algorithm",
-    "description": "An algorithm is a step-by-step set of instructions designed to solve a specific problem or perform a task. Algorithms form the foundation of computer programs.",
-    "example": "// Example: Algorithm to find the sum of two numbers\nfunction sum(a, b) {\n  return a + b;\n}\nconsole.log(sum(5, 3)); // Output: 8"
-  },
-  {
-    "level": 2,
-    "title": "Variable",
-    "description": "A variable is a container used to store data in a program. It allows you to label and manipulate data values.",
-    "example": "let name = 'Alice';\nconst age = 25;\nconsole.log(name, age);"
-  },
-  {
-    "level": 3,
-    "title": "Data Type",
-    "description": "Data types define the kind of data a variable can hold, such as numbers, strings, booleans, arrays, and objects.",
-    "example": "let number = 42; // Number\nlet text = 'Hello'; // String\nlet isActive = true; // Boolean\nlet list = [1, 2, 3]; // Array"
-  },
-  {
-    "level": 4,
-    "title": "Conditional Statement",
-    "description": "Conditional statements allow programs to make decisions based on conditions, typically using if, else if, and else.",
-    "example": "let score = 85;\nif (score >= 90) {\n  console.log('Grade A');\n} else if (score >= 75) {\n  console.log('Grade B');\n} else {\n  console.log('Grade C');\n}"
-  },
-  {
-    "level": 5,
-    "title": "Loop",
-    "description": "Loops are used to repeat a block of code multiple times until a certain condition is met.",
-    "example": "// Example: For loop\nfor (let i = 1; i <= 5; i++) {\n  console.log('Count:', i);\n}"
-  },
-  {
-    "level": 6,
-    "title": "Function",
-    "description": "A function is a reusable block of code that performs a specific task. Functions help keep code modular and organized.",
-    "example": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Bob'));"
-  },
-  {
-    "level": 7,
-    "title": "Array",
-    "description": "An array is a data structure that can store multiple values in a single variable. The values can be accessed by their index number.",
-    "example": "let fruits = ['Apple', 'Banana', 'Mango'];\nconsole.log(fruits[1]); // Output: Banana"
-  },
-  {
-    "level": 8,
-    "title": "Object",
-    "description": "An object stores data in key-value pairs and is used to represent complex data structures.",
-    "example": "let person = {\n  name: 'Alice',\n  age: 25,\n  isStudent: true\n};\nconsole.log(person.name); // Output: Alice"
-  },
-  {
-    "level": 9,
-    "title": "Class",
-    "description": "A class is a blueprint for creating objects with shared properties and methods. It is a core concept in object-oriented programming (OOP).",
-    "example": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    console.log(`${this.name} makes a sound`);\n  }\n}\n\nconst dog = new Animal('Dog');\ndog.speak(); // Output: Dog makes a sound"
-  },
-  {
-    "level": 10,
-    "title": "API",
-    "description": "An API (Application Programming Interface) defines how different software components should communicate with each other.",
-    "example": "// Fetching data from an API\nfetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data));"
-  },
-  {
-    "level": 11,
-    "title": "Recursion",
-    "description": "Recursion is a technique where a function calls itself to solve a smaller instance of the problem until it reaches a base case.",
-    "example": "function factorial(n) {\n  if (n === 1) return 1;\n  return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5)); // Output: 120"
-  },
-  {
-    "level": 12,
-    "title": "Asynchronous Programming",
-    "description": "Asynchronous programming allows a program to handle tasks like network requests without blocking the main thread, improving performance and responsiveness.",
-    "example": "setTimeout(() => {\n  console.log('This runs after 2 seconds');\n}, 2000);\nconsole.log('This runs immediately');"
-  },
-  {
-    "level": 13,
-    "title": "Promise",
-    "description": "A Promise represents a value that may be available now, later, or never. It is commonly used for handling asynchronous operations in JavaScript.",
-    "example": "let promise = new Promise((resolve, reject) => {\n  let success = true;\n  if (success) resolve('Operation succeeded');\n  else reject('Operation failed');\n});\n\npromise.then(console.log).catch(console.error);"
-  },
-  {
-    "level": 14,
-    "title": "Big O Notation",
-    "description": "Big O notation describes the efficiency of an algorithm in terms of time complexity and space complexity as the input size grows.",
-    "example": "// O(n) example\nfunction printItems(arr) {\n  arr.forEach(item => console.log(item));\n}"
-  },
-  {
-    "level": 15,
-    "title": "Hashing",
-    "description": "Hashing converts data into a fixed-size string, often used for storing passwords securely or indexing data efficiently.",
-    "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
-  },
-  {
-    "level": 16,
-    "title": "REST",
-    "description": "REST (Representational State Transfer) is an architectural style for designing networked APIs that use HTTP methods like GET, POST, PUT, and DELETE.",
-    "example": "GET /users\nPOST /users\nPUT /users/:id\nDELETE /users/:id"
-  },
-  {
-    "level": 17,
-    "title": "GraphQL",
-    "description": "GraphQL is a query language for APIs that allows clients to request only the data they need, reducing over-fetching.",
-    "example": "query {\n  user(id: 1) {\n    name\n    email\n  }\n}"
-  },
-  {
-    "level": 18,
-    "title": "Concurrency",
-    "description": "Concurrency is the ability of a system to execute multiple tasks at overlapping times without necessarily running them simultaneously.",
-    "example": "// JavaScript handles concurrency using the event loop\nsetTimeout(() => console.log('Task 1'), 1000);\nconsole.log('Task 2');"
-  },
-  {
-    "level": 19,
-    "title": "Multithreading",
-    "description": "Multithreading allows a program to run multiple threads in parallel, improving performance for CPU-intensive tasks.",
-    "example": "// In Node.js, you can use the worker_threads module\nconst { Worker } = require('worker_threads');\nnew Worker('./worker.js');"
-  },
-  {
-    "level": 20,
-    "title": "Containerization",
-    "description": "Containerization packages applications and their dependencies into isolated environments to ensure consistent deployments across systems. Docker is a popular containerization tool.",
-    "example": "# Dockerfile Example\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nCMD [\"node\", \"index.js\"]"
-  },
-
-
-  
-  {
-    "level": 21,
-    "title": "Stack",
-    "description": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. It is commonly used in function calls, undo operations, and expression evaluation.",
-    "example": "let stack = [];\nstack.push(1);\nstack.push(2);\nconsole.log(stack.pop()); // Output: 2"
-  },
-  {
-    "level": 22,
-    "title": "Queue",
-    "description": "A queue is a linear data structure that follows the First In, First Out (FIFO) principle. It is used in task scheduling and handling asynchronous data.",
-    "example": "let queue = [];\nqueue.push('Task 1');\nqueue.push('Task 2');\nconsole.log(queue.shift()); // Output: Task 1"
-  },
-  {
-    "level": 23,
-    "title": "Linked List",
-    "description": "A linked list is a linear data structure where elements (nodes) are connected using pointers, allowing dynamic memory allocation and efficient insertions/deletions.",
-    "example": "class Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nconst head = new Node(1);\nhead.next = new Node(2);\nhead.next.next = new Node(3);\nconsole.log(head.next.value); // Output: 2"
-  },
-  {
-    "level": 24,
-    "title": "Tree",
-    "description": "A tree is a hierarchical data structure consisting of nodes connected by edges, with one root node at the top. Trees are used in databases, file systems, and more.",
-    "example": "const tree = {\n  value: 'Root',\n  children: [\n    { value: 'Child 1', children: [] },\n    { value: 'Child 2', children: [] }\n  ]\n};\nconsole.log(tree.children[0].value); // Output: Child 1"
-  },
-  {
-    "level": 25,
-    "title": "Graph",
-    "description": "A graph is a data structure made up of nodes (vertices) and connections (edges). Graphs are used in social networks, maps, and recommendation systems.",
-    "example": "const graph = {\n  A: ['B', 'C'],\n  B: ['A', 'D'],\n  C: ['A', 'D'],\n  D: ['B', 'C']\n};\nconsole.log(graph['A']); // Output: ['B', 'C']"
-  },
-  {
-    "level": 26,
-    "title": "Binary Search",
-    "description": "Binary search is an efficient algorithm for finding a target value in a sorted array by repeatedly dividing the search range in half. Time complexity is O(log n).",
-    "example": "function binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  while (left <= right) {\n    let mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}\nconsole.log(binarySearch([1,2,3,4,5], 3)); // Output: 2"
-  },
-  {
-    "level": 27,
-    "title": "Sorting Algorithms",
-    "description": "Sorting algorithms arrange data in a specific order, such as ascending or descending. Examples include Bubble Sort, Merge Sort, and Quick Sort.",
-    "example": "// Example: JavaScript sort method\nlet arr = [5, 2, 8, 1];\narr.sort((a, b) => a - b);\nconsole.log(arr); // Output: [1, 2, 5, 8]"
-  },
-  {
-    "level": 28,
-    "title": "Hash Table",
-    "description": "A hash table is a data structure that maps keys to values for fast lookups using hash functions. It is the foundation of many programming languages' objects and dictionaries.",
-    "example": "let hashTable = new Map();\nhashTable.set('name', 'Alice');\nhashTable.set('age', 25);\nconsole.log(hashTable.get('name')); // Output: Alice"
-  },
-  {
-    "level": 29,
-    "title": "Dynamic Programming",
-    "description": "Dynamic programming is a technique for solving problems by breaking them down into simpler overlapping subproblems and storing solutions to avoid repeated calculations.",
-    "example": "function fibonacci(n, memo = {}) {\n  if (n <= 1) return n;\n  if (memo[n]) return memo[n];\n  memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo);\n  return memo[n];\n}\nconsole.log(fibonacci(6)); // Output: 8"
-  },
-  {
-    "level": 30,
-    "title": "Greedy Algorithm",
-    "description": "A greedy algorithm builds up a solution piece by piece, always choosing the option that offers the most immediate benefit.",
-    "example": "// Example: Coin change problem\nlet coins = [1, 5, 10, 25];\nlet amount = 37;\nlet count = 0;\nfor (let i = coins.length - 1; i >= 0; i--) {\n  while (amount >= coins[i]) {\n    amount -= coins[i];\n    count++;\n  }\n}\nconsole.log(count); // Output: 4"
-  },
-  {
-    "level": 31,
-    "title": "Design Patterns",
-    "description": "Design patterns are common solutions to recurring software design problems. Examples include Singleton, Observer, and Factory patterns.",
-    "example": "// Singleton pattern example\nclass Singleton {\n  constructor() {\n    if (!Singleton.instance) {\n      Singleton.instance = this;\n    }\n    return Singleton.instance;\n  }\n}\nconst instance1 = new Singleton();\nconst instance2 = new Singleton();\nconsole.log(instance1 === instance2); // Output: true"
-  },
-  {
-    "level": 32,
-    "title": "Observer Pattern",
-    "description": "The Observer pattern allows objects to subscribe to changes in another object, enabling reactive programming.",
-    "example": "class Subject {\n  constructor() {\n    this.observers = [];\n  }\n  subscribe(observer) {\n    this.observers.push(observer);\n  }\n  notify(data) {\n    this.observers.forEach(obs => obs(data));\n  }\n}\n\nconst subject = new Subject();\nsubject.subscribe(data => console.log('Observer 1:', data));\nsubject.notify('Update received');"
-  },
-  {
-    "level": 33,
-    "title": "Microservices",
-    "description": "Microservices architecture splits a large application into smaller, independent services that communicate over APIs, making systems scalable and easier to maintain.",
-    "example": "GET /users-service/api/users\nGET /orders-service/api/orders"
-  },
-  {
-    "level": 34,
-    "title": "Load Balancing",
-    "description": "Load balancing distributes incoming network traffic across multiple servers to ensure reliability and performance.",
-    "example": "Example: A reverse proxy like Nginx distributing requests\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://backend_servers;\n  }\n}"
-  },
-  {
-    "level": 35,
-    "title": "Caching",
-    "description": "Caching stores frequently accessed data in memory to improve performance and reduce database load.",
-    "example": "// Example using Redis in Node.js\nconst redis = require('redis');\nconst client = redis.createClient();\nclient.set('user:1', JSON.stringify({ name: 'Alice', age: 25 }));\nclient.get('user:1', (err, data) => {\n  console.log(JSON.parse(data));\n});"
-  },
-  {
-    "level": 36,
-    "title": "Distributed Systems",
-    "description": "A distributed system is a network of independent computers that work together as a single system, often used for scalability and fault tolerance.",
-    "example": "Examples: Google Search, Netflix Streaming, AWS Cloud"
-  },
-  {
-    "level": 37,
-    "title": "Event-Driven Architecture",
-    "description": "In event-driven architecture, services communicate by producing and consuming events, allowing for loose coupling and asynchronous communication.",
-    "example": "// Example with Node.js EventEmitter\nconst EventEmitter = require('events');\nconst eventEmitter = new EventEmitter();\neventEmitter.on('orderPlaced', (order) => console.log('Order received:', order));\neventEmitter.emit('orderPlaced', { id: 1, item: 'Laptop' });"
-  },
-  {
-    "level": 38,
-    "title": "CI/CD",
-    "description": "Continuous Integration (CI) and Continuous Deployment (CD) are practices for automatically testing and deploying code to production environments.",
-    "example": "GitHub Actions Example:\nname: CI Pipeline\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - run: npm install\n      - run: npm test"
-  },
-  {
-    "level": 39,
-    "title": "Containers and Kubernetes",
-    "description": "Containers package applications with their dependencies. Kubernetes manages containerized applications at scale, handling deployments, scaling, and networking.",
-    "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
-  },
-  {
-    "level": 40,
-    "title": "Machine Learning Basics",
-    "description": "Machine learning enables software to learn from data and make predictions without explicit programming. Common algorithms include linear regression and decision trees.",
-    "example": "// Example: Predicting house price with pseudo-code\ntrainModel(data)\npredict(inputData) -> predictedPrice"
-  },
-
-
-  
-  {
-    "level": 41,
-    "title": "Cloud Computing",
-    "description": "Cloud computing provides access to computing resources such as servers, storage, databases, and networking over the internet. It enables on-demand scalability and pay-as-you-go pricing.",
-    "example": "Examples of Cloud Providers:\n- AWS (Amazon Web Services)\n- Microsoft Azure\n- Google Cloud Platform (GCP)"
-  },
-  {
-    "level": 42,
-    "title": "IaaS, PaaS, SaaS",
-    "description": "These are cloud service models. IaaS (Infrastructure as a Service) provides hardware resources, PaaS (Platform as a Service) offers a development environment, and SaaS (Software as a Service) delivers complete applications over the internet.",
-    "example": "IaaS: AWS EC2\nPaaS: Google App Engine\nSaaS: Gmail, Dropbox"
-  },
-  {
-    "level": 43,
-    "title": "Serverless Computing",
-    "description": "Serverless computing allows developers to run code without managing servers. Cloud providers automatically allocate resources and scale as needed.",
-    "example": "AWS Lambda Example:\nexports.handler = async (event) => {\n  return { statusCode: 200, body: 'Hello Serverless!' };\n};"
-  },
-  {
-    "level": 44,
-    "title": "Virtualization",
-    "description": "Virtualization allows multiple virtual machines (VMs) to run on a single physical server, optimizing resource usage and improving flexibility.",
-    "example": "Examples: VMware, VirtualBox, Hyper-V"
-  },
-  {
-    "level": 45,
-    "title": "API Gateway",
-    "description": "An API Gateway manages and routes API requests between clients and microservices, handling authentication, logging, and rate limiting.",
-    "example": "Example:\nClient -> API Gateway -> Microservice 1\n                      -> Microservice 2"
-  },
-  {
-    "level": 46,
-    "title": "Message Queue",
-    "description": "A message queue helps services communicate asynchronously by passing messages. It improves scalability and reliability.",
-    "example": "Popular Tools: RabbitMQ, Kafka, AWS SQS"
-  },
-  {
-    "level": 47,
-    "title": "CDN (Content Delivery Network)",
-    "description": "A CDN stores cached copies of content on servers distributed worldwide, improving website performance and reducing latency.",
-    "example": "Examples: Cloudflare, AWS CloudFront, Akamai"
-  },
-  {
-    "level": 48,
-    "title": "WebSocket",
-    "description": "WebSockets provide a persistent, two-way communication channel between client and server, ideal for real-time applications like chat or live updates.",
-    "example": "const socket = new WebSocket('ws://example.com');\nsocket.onmessage = (event) => console.log(event.data);"
-  },
-  {
-    "level": 49,
-    "title": "OAuth 2.0",
-    "description": "OAuth 2.0 is an authentication framework that allows secure access to resources without sharing passwords, commonly used for social logins.",
-    "example": "Example:\n1. User logs in with Google.\n2. Google issues a token.\n3. Your app uses token to access user's data securely."
-  },
-  {
-    "level": 50,
-    "title": "JWT (JSON Web Token)",
-    "description": "JWT is a compact token format used to securely transmit information between parties, often used for authentication and authorization.",
-    "example": "const jwt = require('jsonwebtoken');\nconst token = jwt.sign({ userId: 1 }, 'secretKey');\nconsole.log(token);"
-  },
-  {
-    "level": 51,
-    "title": "Encryption",
-    "description": "Encryption converts data into an unreadable format to protect it from unauthorized access. Common algorithms include AES and RSA.",
-    "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
-  },
-  {
-    "level": 52,
-    "title": "SSL/TLS",
-    "description": "SSL/TLS protocols secure communication over the internet using encryption, ensuring privacy and data integrity.",
-    "example": "HTTPS = HTTP + SSL/TLS"
-  },
-  {
-    "level": 53,
-    "title": "Firewall",
-    "description": "A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
-    "example": "Example:\nAllow traffic on port 80 (HTTP) and 443 (HTTPS) only."
-  },
-  {
-    "level": 54,
-    "title": "Zero Trust Security",
-    "description": "Zero Trust is a security model where no user or system is trusted by default, requiring continuous verification of identity and permissions.",
-    "example": "Every request must be authenticated and authorized, regardless of location."
-  },
-  {
-    "level": 55,
-    "title": "Blockchain",
-    "description": "Blockchain is a decentralized, distributed ledger technology that securely records transactions without a central authority.",
-    "example": "Example:\nBitcoin and Ethereum are blockchain-based cryptocurrencies."
-  },
-  {
-    "level": 56,
-    "title": "Smart Contract",
-    "description": "Smart contracts are self-executing contracts with terms directly written into code, running on blockchain networks like Ethereum.",
-    "example": "pragma solidity ^0.8.0;\ncontract HelloWorld {\n  string public message = 'Hello, Blockchain!';\n}"
-  },
-  {
-    "level": 57,
-    "title": "Consensus Algorithm",
-    "description": "Consensus algorithms enable distributed networks to agree on a single version of the truth. Popular methods include Proof of Work (PoW) and Proof of Stake (PoS).",
-    "example": "Bitcoin uses Proof of Work to validate transactions."
-  },
-  {
-    "level": 58,
-    "title": "Distributed Ledger",
-    "description": "A distributed ledger is a database replicated across multiple nodes to ensure transparency and tamper-resistance.",
-    "example": "Every participant has an identical copy of the data."
-  },
-  {
-    "level": 59,
-    "title": "Docker",
-    "description": "Docker is a platform for developing, shipping, and running applications inside lightweight, portable containers.",
-    "example": "# Build and run a Docker container\nFROM node:18-alpine\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"node\", \"index.js\"]"
-  },
-  {
-    "level": 60,
-    "title": "Kubernetes",
-    "description": "Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.",
-    "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
-  },
-  {
-    "level": 61,
-    "title": "Load Testing",
-    "description": "Load testing measures how an application performs under high traffic, helping identify bottlenecks and optimize performance.",
-    "example": "Tools: Apache JMeter, Locust, k6"
-  },
-  {
-    "level": 62,
-    "title": "Rate Limiting",
-    "description": "Rate limiting controls the number of requests a user can make to an API within a given time to prevent abuse and ensure stability.",
-    "example": "Example:\nLimit each user to 100 requests per minute."
-  },
-  {
-    "level": 63,
-    "title": "Edge Computing",
-    "description": "Edge computing brings computation and data storage closer to the user or device, reducing latency and improving speed.",
-    "example": "Use cases: IoT devices, autonomous vehicles."
-  },
-  {
-    "level": 64,
-    "title": "Machine Learning Operations (MLOps)",
-    "description": "MLOps is the practice of deploying, monitoring, and maintaining machine learning models in production environments.",
-    "example": "Pipeline:\n1. Model Training\n2. Model Deployment\n3. Monitoring Performance"
-  },
-  {
-    "level": 65,
-    "title": "Artificial Intelligence",
-    "description": "Artificial Intelligence (AI) is the simulation of human intelligence by machines, allowing them to learn, reason, and make decisions.",
-    "example": "Applications:\n- Chatbots\n- Self-driving cars\n- Recommendation systems"
-  },
-  {
-    "level": 66,
-    "title": "Neural Networks",
-    "description": "Neural networks are algorithms inspired by the human brain, used in deep learning to recognize patterns and process complex data.",
-    "example": "Example frameworks: TensorFlow, PyTorch"
-  },
-  {
-    "level": 67,
-    "title": "Deep Learning",
-    "description": "Deep learning is a subset of machine learning using multi-layer neural networks for tasks like image recognition and natural language processing.",
-    "example": "Use case: Detecting objects in images."
-  },
-  {
-    "level": 68,
-    "title": "Big Data",
-    "description": "Big data involves processing and analyzing massive datasets that are too large for traditional tools to handle efficiently.",
-    "example": "Technologies: Hadoop, Apache Spark, Google BigQuery"
-  },
-  {
-    "level": 69,
-    "title": "Data Lake",
-    "description": "A data lake is a centralized repository for storing large volumes of raw data in various formats for future processing and analysis.",
-    "example": "AWS S3 is commonly used as a data lake storage solution."
-  },
-  {
-    "level": 70,
-    "title": "Data Warehouse",
-    "description": "A data warehouse stores structured, processed data optimized for business intelligence and analytics.",
-    "example": "Examples: Amazon Redshift, Snowflake, Google BigQuery"
-  },
-  {
-    "level": 71,
-    "title": "DevSecOps",
-    "description": "DevSecOps integrates security practices into DevOps workflows to ensure security is addressed throughout the development lifecycle.",
-    "example": "Security checks are run automatically during CI/CD pipeline."
-  },
-  {
-    "level": 72,
-    "title": "Web Assembly (WASM)",
-    "description": "WebAssembly is a binary instruction format that enables running high-performance applications in web browsers.",
-    "example": "Use case: Running C++ code in a browser."
-  },
-  {
-    "level": 73,
-    "title": "Quantum Computing",
-    "description": "Quantum computing uses principles of quantum mechanics to perform complex computations much faster than classical computers.",
-    "example": "Quantum algorithms like Shor's algorithm can factor large numbers exponentially faster."
-  },
-  {
-    "level": 74,
-    "title": "Federated Learning",
-    "description": "Federated learning is a machine learning approach where data remains on local devices, and only model updates are shared, enhancing privacy.",
-    "example": "Used by Google Keyboard to improve predictions without sending user data."
-  },
-  {
-    "level": 75,
-    "title": "Web 3.0",
-    "description": "Web 3.0 is the decentralized web that aims to give users more control over their data using blockchain and peer-to-peer networks.",
-    "example": "Examples: Decentralized apps (dApps), IPFS"
-  }
-
-
-]
-        }
+    "Programming-Concepts": {
+        "title": "Programming Concepts",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Algorithm",
+                "description": "An algorithm is a step-by-step set of instructions designed to solve a specific problem or perform a task. Algorithms form the foundation of computer programs.",
+                "example": "// Example: Algorithm to find the sum of two numbers\nfunction sum(a, b) {\n  return a + b;\n}\nconsole.log(sum(5, 3)); // Output: 8"
+            },
+            {
+                "level": 2,
+                "title": "Variable",
+                "description": "A variable is a container used to store data in a program. It allows you to label and manipulate data values.",
+                "example": "let name = 'Alice';\nconst age = 25;\nconsole.log(name, age);"
+            },
+            {
+                "level": 3,
+                "title": "Data Type",
+                "description": "Data types define the kind of data a variable can hold, such as numbers, strings, booleans, arrays, and objects.",
+                "example": "let number = 42; // Number\nlet text = 'Hello'; // String\nlet isActive = true; // Boolean\nlet list = [1, 2, 3]; // Array"
+            },
+            {
+                "level": 4,
+                "title": "Conditional Statement",
+                "description": "Conditional statements allow programs to make decisions based on conditions, typically using if, else if, and else.",
+                "example": "let score = 85;\nif (score >= 90) {\n  console.log('Grade A');\n} else if (score >= 75) {\n  console.log('Grade B');\n} else {\n  console.log('Grade C');\n}"
+            },
+            {
+                "level": 5,
+                "title": "Loop",
+                "description": "Loops are used to repeat a block of code multiple times until a certain condition is met.",
+                "example": "// Example: For loop\nfor (let i = 1; i <= 5; i++) {\n  console.log('Count:', i);\n}"
+            },
+            {
+                "level": 6,
+                "title": "Function",
+                "description": "A function is a reusable block of code that performs a specific task. Functions help keep code modular and organized.",
+                "example": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Bob'));"
+            },
+            {
+                "level": 7,
+                "title": "Array",
+                "description": "An array is a data structure that can store multiple values in a single variable. The values can be accessed by their index number.",
+                "example": "let fruits = ['Apple', 'Banana', 'Mango'];\nconsole.log(fruits[1]); // Output: Banana"
+            },
+            {
+                "level": 8,
+                "title": "Object",
+                "description": "An object stores data in key-value pairs and is used to represent complex data structures.",
+                "example": "let person = {\n  name: 'Alice',\n  age: 25,\n  isStudent: true\n};\nconsole.log(person.name); // Output: Alice"
+            },
+            {
+                "level": 9,
+                "title": "Class",
+                "description": "A class is a blueprint for creating objects with shared properties and methods. It is a core concept in object-oriented programming (OOP).",
+                "example": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    console.log(`${this.name} makes a sound`);\n  }\n}\n\nconst dog = new Animal('Dog');\ndog.speak(); // Output: Dog makes a sound"
+            },
+            {
+                "level": 10,
+                "title": "API",
+                "description": "An API (Application Programming Interface) defines how different software components should communicate with each other.",
+                "example": "// Fetching data from an API\nfetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            },
+            {
+                "level": 11,
+                "title": "Recursion",
+                "description": "Recursion is a technique where a function calls itself to solve a smaller instance of the problem until it reaches a base case.",
+                "example": "function factorial(n) {\n  if (n === 1) return 1;\n  return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5)); // Output: 120"
+            },
+            {
+                "level": 12,
+                "title": "Asynchronous Programming",
+                "description": "Asynchronous programming allows a program to handle tasks like network requests without blocking the main thread, improving performance and responsiveness.",
+                "example": "setTimeout(() => {\n  console.log('This runs after 2 seconds');\n}, 2000);\nconsole.log('This runs immediately');"
+            },
+            {
+                "level": 13,
+                "title": "Promise",
+                "description": "A Promise represents a value that may be available now, later, or never. It is commonly used for handling asynchronous operations in JavaScript.",
+                "example": "let promise = new Promise((resolve, reject) => {\n  let success = true;\n  if (success) resolve('Operation succeeded');\n  else reject('Operation failed');\n});\n\npromise.then(console.log).catch(console.error);"
+            },
+            {
+                "level": 14,
+                "title": "Big O Notation",
+                "description": "Big O notation describes the efficiency of an algorithm in terms of time complexity and space complexity as the input size grows.",
+                "example": "// O(n) example\nfunction printItems(arr) {\n  arr.forEach(item => console.log(item));\n}"
+            },
+            {
+                "level": 15,
+                "title": "Hashing",
+                "description": "Hashing converts data into a fixed-size string, often used for storing passwords securely or indexing data efficiently.",
+                "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
+            },
+            {
+                "level": 16,
+                "title": "REST",
+                "description": "REST (Representational State Transfer) is an architectural style for designing networked APIs that use HTTP methods like GET, POST, PUT, and DELETE.",
+                "example": "GET /users\nPOST /users\nPUT /users/:id\nDELETE /users/:id"
+            },
+            {
+                "level": 17,
+                "title": "GraphQL",
+                "description": "GraphQL is a query language for APIs that allows clients to request only the data they need, reducing over-fetching.",
+                "example": "query {\n  user(id: 1) {\n    name\n    email\n  }\n}"
+            },
+            {
+                "level": 18,
+                "title": "Concurrency",
+                "description": "Concurrency is the ability of a system to execute multiple tasks at overlapping times without necessarily running them simultaneously.",
+                "example": "// JavaScript handles concurrency using the event loop\nsetTimeout(() => console.log('Task 1'), 1000);\nconsole.log('Task 2');"
+            },
+            {
+                "level": 19,
+                "title": "Multithreading",
+                "description": "Multithreading allows a program to run multiple threads in parallel, improving performance for CPU-intensive tasks.",
+                "example": "// In Node.js, you can use the worker_threads module\nconst { Worker } = require('worker_threads');\nnew Worker('./worker.js');"
+            },
+            {
+                "level": 20,
+                "title": "Containerization",
+                "description": "Containerization packages applications and their dependencies into isolated environments to ensure consistent deployments across systems. Docker is a popular containerization tool.",
+                "example": "# Dockerfile Example\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nCMD [\"node\", \"index.js\"]"
+            },
+            {
+                "level": 21,
+                "title": "Stack",
+                "description": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. It is commonly used in function calls, undo operations, and expression evaluation.",
+                "example": "let stack = [];\nstack.push(1);\nstack.push(2);\nconsole.log(stack.pop()); // Output: 2"
+            },
+            {
+                "level": 22,
+                "title": "Queue",
+                "description": "A queue is a linear data structure that follows the First In, First Out (FIFO) principle. It is used in task scheduling and handling asynchronous data.",
+                "example": "let queue = [];\nqueue.push('Task 1');\nqueue.push('Task 2');\nconsole.log(queue.shift()); // Output: Task 1"
+            },
+            {
+                "level": 23,
+                "title": "Linked List",
+                "description": "A linked list is a linear data structure where elements (nodes) are connected using pointers, allowing dynamic memory allocation and efficient insertions/deletions.",
+                "example": "class Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\n\nconst head = new Node(1);\nhead.next = new Node(2);\nhead.next.next = new Node(3);\nconsole.log(head.next.value); // Output: 2"
+            },
+            {
+                "level": 24,
+                "title": "Tree",
+                "description": "A tree is a hierarchical data structure consisting of nodes connected by edges, with one root node at the top. Trees are used in databases, file systems, and more.",
+                "example": "const tree = {\n  value: 'Root',\n  children: [\n    { value: 'Child 1', children: [] },\n    { value: 'Child 2', children: [] }\n  ]\n};\nconsole.log(tree.children[0].value); // Output: Child 1"
+            },
+            {
+                "level": 25,
+                "title": "Graph",
+                "description": "A graph is a data structure made up of nodes (vertices) and connections (edges). Graphs are used in social networks, maps, and recommendation systems.",
+                "example": "const graph = {\n  A: ['B', 'C'],\n  B: ['A', 'D'],\n  C: ['A', 'D'],\n  D: ['B', 'C']\n};\nconsole.log(graph['A']); // Output: ['B', 'C']"
+            },
+            {
+                "level": 26,
+                "title": "Binary Search",
+                "description": "Binary search is an efficient algorithm for finding a target value in a sorted array by repeatedly dividing the search range in half. Time complexity is O(log n).",
+                "example": "function binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  while (left <= right) {\n    let mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}\nconsole.log(binarySearch([1,2,3,4,5], 3)); // Output: 2"
+            },
+            {
+                "level": 27,
+                "title": "Sorting Algorithms",
+                "description": "Sorting algorithms arrange data in a specific order, such as ascending or descending. Examples include Bubble Sort, Merge Sort, and Quick Sort.",
+                "example": "// Example: JavaScript sort method\nlet arr = [5, 2, 8, 1];\narr.sort((a, b) => a - b);\nconsole.log(arr); // Output: [1, 2, 5, 8]"
+            },
+            {
+                "level": 28,
+                "title": "Hash Table",
+                "description": "A hash table is a data structure that maps keys to values for fast lookups using hash functions. It is the foundation of many programming languages' objects and dictionaries.",
+                "example": "let hashTable = new Map();\nhashTable.set('name', 'Alice');\nhashTable.set('age', 25);\nconsole.log(hashTable.get('name')); // Output: Alice"
+            },
+            {
+                "level": 29,
+                "title": "Dynamic Programming",
+                "description": "Dynamic programming is a technique for solving problems by breaking them down into simpler overlapping subproblems and storing solutions to avoid repeated calculations.",
+                "example": "function fibonacci(n, memo = {}) {\n  if (n <= 1) return n;\n  if (memo[n]) return memo[n];\n  memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo);\n  return memo[n];\n}\nconsole.log(fibonacci(6)); // Output: 8"
+            },
+            {
+                "level": 30,
+                "title": "Greedy Algorithm",
+                "description": "A greedy algorithm builds up a solution piece by piece, always choosing the option that offers the most immediate benefit.",
+                "example": "// Example: Coin change problem\nlet coins = [1, 5, 10, 25];\nlet amount = 37;\nlet count = 0;\nfor (let i = coins.length - 1; i >= 0; i--) {\n  while (amount >= coins[i]) {\n    amount -= coins[i];\n    count++;\n  }\n}\nconsole.log(count); // Output: 4"
+            },
+            {
+                "level": 31,
+                "title": "Design Patterns",
+                "description": "Design patterns are common solutions to recurring software design problems. Examples include Singleton, Observer, and Factory patterns.",
+                "example": "// Singleton pattern example\nclass Singleton {\n  constructor() {\n    if (!Singleton.instance) {\n      Singleton.instance = this;\n    }\n    return Singleton.instance;\n  }\n}\nconst instance1 = new Singleton();\nconst instance2 = new Singleton();\nconsole.log(instance1 === instance2); // Output: true"
+            },
+            {
+                "level": 32,
+                "title": "Observer Pattern",
+                "description": "The Observer pattern allows objects to subscribe to changes in another object, enabling reactive programming.",
+                "example": "class Subject {\n  constructor() {\n    this.observers = [];\n  }\n  subscribe(observer) {\n    this.observers.push(observer);\n  }\n  notify(data) {\n    this.observers.forEach(obs => obs(data));\n  }\n}\n\nconst subject = new Subject();\nsubject.subscribe(data => console.log('Observer 1:', data));\nsubject.notify('Update received');"
+            },
+            {
+                "level": 33,
+                "title": "Microservices",
+                "description": "Microservices architecture splits a large application into smaller, independent services that communicate over APIs, making systems scalable and easier to maintain.",
+                "example": "GET /users-service/api/users\nGET /orders-service/api/orders"
+            },
+            {
+                "level": 34,
+                "title": "Load Balancing",
+                "description": "Load balancing distributes incoming network traffic across multiple servers to ensure reliability and performance.",
+                "example": "Example: A reverse proxy like Nginx distributing requests\nserver {\n  listen 80;\n  location / {\n    proxy_pass http://backend_servers;\n  }\n}"
+            },
+            {
+                "level": 35,
+                "title": "Caching",
+                "description": "Caching stores frequently accessed data in memory to improve performance and reduce database load.",
+                "example": "// Example using Redis in Node.js\nconst redis = require('redis');\nconst client = redis.createClient();\nclient.set('user:1', JSON.stringify({ name: 'Alice', age: 25 }));\nclient.get('user:1', (err, data) => {\n  console.log(JSON.parse(data));\n});"
+            },
+            {
+                "level": 36,
+                "title": "Distributed Systems",
+                "description": "A distributed system is a network of independent computers that work together as a single system, often used for scalability and fault tolerance.",
+                "example": "Examples: Google Search, Netflix Streaming, AWS Cloud"
+            },
+            {
+                "level": 37,
+                "title": "Event-Driven Architecture",
+                "description": "In event-driven architecture, services communicate by producing and consuming events, allowing for loose coupling and asynchronous communication.",
+                "example": "// Example with Node.js EventEmitter\nconst EventEmitter = require('events');\nconst eventEmitter = new EventEmitter();\neventEmitter.on('orderPlaced', (order) => console.log('Order received:', order));\neventEmitter.emit('orderPlaced', { id: 1, item: 'Laptop' });"
+            },
+            {
+                "level": 38,
+                "title": "CI/CD",
+                "description": "Continuous Integration (CI) and Continuous Deployment (CD) are practices for automatically testing and deploying code to production environments.",
+                "example": "GitHub Actions Example:\nname: CI Pipeline\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - run: npm install\n      - run: npm test"
+            },
+            {
+                "level": 39,
+                "title": "Containers and Kubernetes",
+                "description": "Containers package applications with their dependencies. Kubernetes manages containerized applications at scale, handling deployments, scaling, and networking.",
+                "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
+            },
+            {
+                "level": 40,
+                "title": "Machine Learning Basics",
+                "description": "Machine learning enables software to learn from data and make predictions without explicit programming. Common algorithms include linear regression and decision trees.",
+                "example": "// Example: Predicting house price with pseudo-code\ntrainModel(data)\npredict(inputData) -> predictedPrice"
+            },
+            {
+                "level": 41,
+                "title": "Cloud Computing",
+                "description": "Cloud computing provides access to computing resources such as servers, storage, databases, and networking over the internet. It enables on-demand scalability and pay-as-you-go pricing.",
+                "example": "Examples of Cloud Providers:\n- AWS (Amazon Web Services)\n- Microsoft Azure\n- Google Cloud Platform (GCP)"
+            },
+            {
+                "level": 42,
+                "title": "IaaS, PaaS, SaaS",
+                "description": "These are cloud service models. IaaS (Infrastructure as a Service) provides hardware resources, PaaS (Platform as a Service) offers a development environment, and SaaS (Software as a Service) delivers complete applications over the internet.",
+                "example": "IaaS: AWS EC2\nPaaS: Google App Engine\nSaaS: Gmail, Dropbox"
+            },
+            {
+                "level": 43,
+                "title": "Serverless Computing",
+                "description": "Serverless computing allows developers to run code without managing servers. Cloud providers automatically allocate resources and scale as needed.",
+                "example": "AWS Lambda Example:\nexports.handler = async (event) => {\n  return { statusCode: 200, body: 'Hello Serverless!' };\n};"
+            },
+            {
+                "level": 44,
+                "title": "Virtualization",
+                "description": "Virtualization allows multiple virtual machines (VMs) to run on a single physical server, optimizing resource usage and improving flexibility.",
+                "example": "Examples: VMware, VirtualBox, Hyper-V"
+            },
+            {
+                "level": 45,
+                "title": "API Gateway",
+                "description": "An API Gateway manages and routes API requests between clients and microservices, handling authentication, logging, and rate limiting.",
+                "example": "Example:\nClient -> API Gateway -> Microservice 1\n                      -> Microservice 2"
+            },
+            {
+                "level": 46,
+                "title": "Message Queue",
+                "description": "A message queue helps services communicate asynchronously by passing messages. It improves scalability and reliability.",
+                "example": "Popular Tools: RabbitMQ, Kafka, AWS SQS"
+            },
+            {
+                "level": 47,
+                "title": "CDN (Content Delivery Network)",
+                "description": "A CDN stores cached copies of content on servers distributed worldwide, improving website performance and reducing latency.",
+                "example": "Examples: Cloudflare, AWS CloudFront, Akamai"
+            },
+            {
+                "level": 48,
+                "title": "WebSocket",
+                "description": "WebSockets provide a persistent, two-way communication channel between client and server, ideal for real-time applications like chat or live updates.",
+                "example": "const socket = new WebSocket('ws://example.com');\nsocket.onmessage = (event) => console.log(event.data);"
+            },
+            {
+                "level": 49,
+                "title": "OAuth 2.0",
+                "description": "OAuth 2.0 is an authentication framework that allows secure access to resources without sharing passwords, commonly used for social logins.",
+                "example": "Example:\n1. User logs in with Google.\n2. Google issues a token.\n3. Your app uses token to access user's data securely."
+            },
+            {
+                "level": 50,
+                "title": "JWT (JSON Web Token)",
+                "description": "JWT is a compact token format used to securely transmit information between parties, often used for authentication and authorization.",
+                "example": "const jwt = require('jsonwebtoken');\nconst token = jwt.sign({ userId: 1 }, 'secretKey');\nconsole.log(token);"
+            },
+            {
+                "level": 51,
+                "title": "Encryption",
+                "description": "Encryption converts data into an unreadable format to protect it from unauthorized access. Common algorithms include AES and RSA.",
+                "example": "const crypto = require('crypto');\nconst hash = crypto.createHash('sha256').update('password').digest('hex');\nconsole.log(hash);"
+            },
+            {
+                "level": 52,
+                "title": "SSL/TLS",
+                "description": "SSL/TLS protocols secure communication over the internet using encryption, ensuring privacy and data integrity.",
+                "example": "HTTPS = HTTP + SSL/TLS"
+            },
+            {
+                "level": 53,
+                "title": "Firewall",
+                "description": "A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+                "example": "Example:\nAllow traffic on port 80 (HTTP) and 443 (HTTPS) only."
+            },
+            {
+                "level": 54,
+                "title": "Zero Trust Security",
+                "description": "Zero Trust is a security model where no user or system is trusted by default, requiring continuous verification of identity and permissions.",
+                "example": "Every request must be authenticated and authorized, regardless of location."
+            },
+            {
+                "level": 55,
+                "title": "Blockchain",
+                "description": "Blockchain is a decentralized, distributed ledger technology that securely records transactions without a central authority.",
+                "example": "Example:\nBitcoin and Ethereum are blockchain-based cryptocurrencies."
+            },
+            {
+                "level": 56,
+                "title": "Smart Contract",
+                "description": "Smart contracts are self-executing contracts with terms directly written into code, running on blockchain networks like Ethereum.",
+                "example": "pragma solidity ^0.8.0;\ncontract HelloWorld {\n  string public message = 'Hello, Blockchain!';\n}"
+            },
+            {
+                "level": 57,
+                "title": "Consensus Algorithm",
+                "description": "Consensus algorithms enable distributed networks to agree on a single version of the truth. Popular methods include Proof of Work (PoW) and Proof of Stake (PoS).",
+                "example": "Bitcoin uses Proof of Work to validate transactions."
+            },
+            {
+                "level": 58,
+                "title": "Distributed Ledger",
+                "description": "A distributed ledger is a database replicated across multiple nodes to ensure transparency and tamper-resistance.",
+                "example": "Every participant has an identical copy of the data."
+            },
+            {
+                "level": 59,
+                "title": "Docker",
+                "description": "Docker is a platform for developing, shipping, and running applications inside lightweight, portable containers.",
+                "example": "# Build and run a Docker container\nFROM node:18-alpine\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"node\", \"index.js\"]"
+            },
+            {
+                "level": 60,
+                "title": "Kubernetes",
+                "description": "Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.",
+                "example": "kubectl run my-app --image=my-app:1.0 --replicas=3"
+            },
+            {
+                "level": 61,
+                "title": "Load Testing",
+                "description": "Load testing measures how an application performs under high traffic, helping identify bottlenecks and optimize performance.",
+                "example": "Tools: Apache JMeter, Locust, k6"
+            },
+            {
+                "level": 62,
+                "title": "Rate Limiting",
+                "description": "Rate limiting controls the number of requests a user can make to an API within a given time to prevent abuse and ensure stability.",
+                "example": "Example:\nLimit each user to 100 requests per minute."
+            },
+            {
+                "level": 63,
+                "title": "Edge Computing",
+                "description": "Edge computing brings computation and data storage closer to the user or device, reducing latency and improving speed.",
+                "example": "Use cases: IoT devices, autonomous vehicles."
+            },
+            {
+                "level": 64,
+                "title": "Machine Learning Operations (MLOps)",
+                "description": "MLOps is the practice of deploying, monitoring, and maintaining machine learning models in production environments.",
+                "example": "Pipeline:\n1. Model Training\n2. Model Deployment\n3. Monitoring Performance"
+            },
+            {
+                "level": 65,
+                "title": "Artificial Intelligence",
+                "description": "Artificial Intelligence (AI) is the simulation of human intelligence by machines, allowing them to learn, reason, and make decisions.",
+                "example": "Applications:\n- Chatbots\n- Self-driving cars\n- Recommendation systems"
+            },
+            {
+                "level": 66,
+                "title": "Neural Networks",
+                "description": "Neural networks are algorithms inspired by the human brain, used in deep learning to recognize patterns and process complex data.",
+                "example": "Example frameworks: TensorFlow, PyTorch"
+            },
+            {
+                "level": 67,
+                "title": "Deep Learning",
+                "description": "Deep learning is a subset of machine learning using multi-layer neural networks for tasks like image recognition and natural language processing.",
+                "example": "Use case: Detecting objects in images."
+            },
+            {
+                "level": 68,
+                "title": "Big Data",
+                "description": "Big data involves processing and analyzing massive datasets that are too large for traditional tools to handle efficiently.",
+                "example": "Technologies: Hadoop, Apache Spark, Google BigQuery"
+            },
+            {
+                "level": 69,
+                "title": "Data Lake",
+                "description": "A data lake is a centralized repository for storing large volumes of raw data in various formats for future processing and analysis.",
+                "example": "AWS S3 is commonly used as a data lake storage solution."
+            },
+            {
+                "level": 70,
+                "title": "Data Warehouse",
+                "description": "A data warehouse stores structured, processed data optimized for business intelligence and analytics.",
+                "example": "Examples: Amazon Redshift, Snowflake, Google BigQuery"
+            },
+            {
+                "level": 71,
+                "title": "DevSecOps",
+                "description": "DevSecOps integrates security practices into DevOps workflows to ensure security is addressed throughout the development lifecycle.",
+                "example": "Security checks are run automatically during CI/CD pipeline."
+            },
+            {
+                "level": 72,
+                "title": "Web Assembly (WASM)",
+                "description": "WebAssembly is a binary instruction format that enables running high-performance applications in web browsers.",
+                "example": "Use case: Running C++ code in a browser."
+            },
+            {
+                "level": 73,
+                "title": "Quantum Computing",
+                "description": "Quantum computing uses principles of quantum mechanics to perform complex computations much faster than classical computers.",
+                "example": "Quantum algorithms like Shor's algorithm can factor large numbers exponentially faster."
+            },
+            {
+                "level": 74,
+                "title": "Federated Learning",
+                "description": "Federated learning is a machine learning approach where data remains on local devices, and only model updates are shared, enhancing privacy.",
+                "example": "Used by Google Keyboard to improve predictions without sending user data."
+            },
+            {
+                "level": 75,
+                "title": "Web 3.0",
+                "description": "Web 3.0 is the decentralized web that aims to give users more control over their data using blockchain and peer-to-peer networks.",
+                "example": "Examples: Decentralized apps (dApps), IPFS"
+            }
+        ]
+    },
+    "Data-Structures-and-Algorithms": {
+        "title": "Data Structures and Algorithms",
+        "levels": [
+            {
+                "level": 1,
+                "title": "Introduction to DSA",
+                "description": "Data Structures and Algorithms (DSA) form the foundation of efficient problem-solving in programming. Understanding DSA helps you write optimized code, improve performance, and tackle real-world challenges like search engines, social media feeds, and AI systems.",
+                "example": "// Example: Simple algorithm to find the sum of two numbers\nfunction add(a, b) {\n  return a + b;\n}\nconsole.log(add(5, 3)); // Output: 8"
+            },
+            {
+                "level": 2,
+                "title": "Big-O Notation",
+                "description": "Big-O notation describes the performance and efficiency of an algorithm. It measures how runtime or space requirements grow as the input size increases. Common complexities include O(1), O(log n), O(n), O(n log n), and O(n^2).",
+                "example": "// Example: O(n) linear complexity\nfunction printArray(arr) {\n  arr.forEach(item => console.log(item));\n}\nprintArray([1,2,3,4]);"
+            },
+            {
+                "level": 3,
+                "title": "Arrays",
+                "description": "Arrays store multiple values in a single variable. They allow fast access to elements by index and are fundamental for building other data structures. Operations include insertion, deletion, traversal, and searching.",
+                "example": "let numbers = [1, 2, 3, 4];\nnumbers.push(5); // Add element\nnumbers.splice(2, 1); // Remove element at index 2\nconsole.log(numbers);"
+            },
+            {
+                "level": 4,
+                "title": "Linked List",
+                "description": "A linked list is a linear data structure where elements (nodes) are connected using pointers. It is useful for dynamic memory allocation and efficient insertion/deletion compared to arrays.",
+                "example": "// Simple Linked List Node in JavaScript\nclass Node {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n}\nconst first = new Node(10);\nfirst.next = new Node(20);\nconsole.log(first.next.value); // Output: 20"
+            },
+            {
+                "level": 5,
+                "title": "Stacks",
+                "description": "A stack follows the LIFO (Last In, First Out) principle. Elements are added and removed from the top only. Commonly used in undo operations, recursion, and expression evaluation.",
+                "example": "let stack = [];\nstack.push(1);\nstack.push(2);\nconsole.log(stack.pop()); // Output: 2"
+            },
+            {
+                "level": 6,
+                "title": "Queues",
+                "description": "A queue follows the FIFO (First In, First Out) principle. Elements are added to the rear and removed from the front. Useful in task scheduling, print queues, and order processing.",
+                "example": "let queue = [];\nqueue.push(1);\nqueue.push(2);\nconsole.log(queue.shift()); // Output: 1"
+            },
+            {
+                "level": 7,
+                "title": "Hash Tables",
+                "description": "Hash tables store key-value pairs for fast lookups and insertions. They use a hashing function to map keys to specific locations in memory, making operations efficient on average.",
+                "example": "let map = new Map();\nmap.set('name', 'Alice');\nmap.set('age', 25);\nconsole.log(map.get('name')); // Output: Alice"
+            },
+            {
+                "level": 8,
+                "title": "Recursion",
+                "description": "Recursion is a process where a function calls itself to solve a smaller instance of the problem. It's widely used in tree traversal, divide-and-conquer algorithms, and backtracking.",
+                "example": "// Example: Factorial using recursion\nfunction factorial(n) {\n  if (n === 0) return 1;\n  return n * factorial(n - 1);\n}\nconsole.log(factorial(5)); // Output: 120"
+            },
+            {
+                "level": 9,
+                "title": "Trees",
+                "description": "Trees are hierarchical data structures with nodes connected by edges. Common types include binary trees, binary search trees, and AVL trees. They're used in databases, file systems, and AI.",
+                "example": "// Basic Binary Tree Node\nclass TreeNode {\n  constructor(value) {\n    this.value = value;\n    this.left = null;\n    this.right = null;\n  }\n}\nconst root = new TreeNode(10);\nroot.left = new TreeNode(5);\nroot.right = new TreeNode(15);"
+            },
+            {
+                "level": 10,
+                "title": "Graphs",
+                "description": "Graphs consist of nodes (vertices) connected by edges. They can be directed or undirected, weighted or unweighted. Used in social networks, navigation systems, and network routing.",
+                "example": "// Representing a graph using adjacency list\nconst graph = {\n  A: ['B', 'C'],\n  B: ['A', 'D'],\n  C: ['A', 'D'],\n  D: ['B', 'C']\n};\nconsole.log(graph.A); // Output: [ 'B', 'C' ]"
+            },
+            {
+                "level": 11,
+                "title": "Sorting Algorithms",
+                "description": "Sorting arranges data in a specific order. Common algorithms include Bubble Sort, Merge Sort, Quick Sort, and Insertion Sort. They vary in complexity and use cases.",
+                "example": "// Example: Bubble Sort\nfunction bubbleSort(arr) {\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = 0; j < arr.length - i - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];\n      }\n    }\n  }\n  return arr;\n}\nconsole.log(bubbleSort([4, 2, 7, 1]));"
+            },
+            {
+                "level": 12,
+                "title": "Searching Algorithms",
+                "description": "Searching algorithms help find elements in a dataset. Common types include Linear Search and Binary Search, each with different performance characteristics.",
+                "example": "// Example: Binary Search\nfunction binarySearch(arr, target) {\n  let left = 0;\n  let right = arr.length - 1;\n  while (left <= right) {\n    const mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}\nconsole.log(binarySearch([1,2,3,4,5], 4)); // Output: 3"
+            },
+            {
+                "level": 13,
+                "title": "Dynamic Programming",
+                "description": "Dynamic Programming (DP) is an optimization technique for solving problems by breaking them down into overlapping subproblems and storing solutions to avoid redundant calculations.",
+                "example": "// Example: Fibonacci using DP\nfunction fibonacci(n) {\n  let dp = [0, 1];\n  for (let i = 2; i <= n; i++) {\n    dp[i] = dp[i - 1] + dp[i - 2];\n  }\n  return dp[n];\n}\nconsole.log(fibonacci(6)); // Output: 8"
+            },
+            {
+                "level": 14,
+                "title": "Greedy Algorithms",
+                "description": "Greedy algorithms make the best local choice at each step to achieve a global solution. They're used in problems like activity selection, Huffman coding, and minimum spanning trees.",
+                "example": "// Example: Coin Change using Greedy Approach\nfunction coinChange(coins, amount) {\n  coins.sort((a, b) => b - a);\n  let count = 0;\n  for (let coin of coins) {\n    while (amount >= coin) {\n      amount -= coin;\n      count++;\n    }\n  }\n  return count;\n}\nconsole.log(coinChange([25, 10, 5, 1], 49)); // Output: 7"
+            },
+            {
+                "level": 15,
+                "title": "Backtracking",
+                "description": "Backtracking systematically searches for solutions by exploring possibilities and undoing steps when a dead-end is reached. Commonly used in puzzles, mazes, and constraint satisfaction problems.",
+                "example": "// Example: N-Queens Problem Skeleton\nfunction solveNQueens(n) {\n  const board = Array.from({ length: n }, () => Array(n).fill('.'));\n  function backtrack(row) {\n    if (row === n) return true; // Found solution\n    // Try placing queen in each column\n    return false;\n  }\n  backtrack(0);\n}\nsolveNQueens(4);"
+            }
+        ]
+    }
 }
