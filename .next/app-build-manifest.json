@@ -23,6 +23,12 @@
       "static/chunks/main-app.js",
       "static/css/app/learn/[topic]/[title]/page.css",
       "static/chunks/app/learn/[topic]/[title]/page.js"
+    ],
+    "/learn/[topic]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/learn/[topic]/page.css",
+      "static/chunks/app/learn/[topic]/page.js"
     ]
   }
 }

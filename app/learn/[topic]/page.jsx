@@ -6,6 +6,28 @@ import styles from "../learn.module.css";
 import { slugify } from "@/utils/slugify";
 import Sidebar from "./[title]/SidebarClient";
 
+export async function generateMetadata({ params }) {
+  const { topic } = await params;
+  const topicData = learnData[topic];
+
+  if (!topicData) {
+    return {
+      title: 'Topic Not Found',
+      description: 'The requested topic could not be found.',
+    };
+  }
+
+  // Find the first lesson to get its description
+  const firstLesson = topicData.levels[0];
+  const pageDescription = firstLesson ? firstLesson.description.substring(0, 160).trim() : topicData.description;
+
+  return {
+    title: `${topicData.title} | Learn Playground`,
+    description: pageDescription,
+  };
+}
+
+
 
 export async function generateStaticParams() {
   const paths = Object.keys(learnData).map((topicKey) => ({
