@@ -8,6 +8,26 @@ import { slugify } from "@/utils/slugify";
 import Sidebar from "./SidebarClient";
 
 
+export async function generateMetadata({ params }) {
+  const { topic, title } = await params;
+
+  const topicData = learnData[topic];
+  if (!topicData) return {};
+
+  const levels = topicData.levels;
+  const current = levels.find((lvl) => slugify(lvl.title) === title);
+  if (!current) return {};
+
+  const pageTitle = `${topicData.title} — ${current.title}`;
+  const pageDescription = current.description.substring(0, 160).trim();
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+  };
+}
+
+
 export async function generateStaticParams() {
   const paths = [];
   for (const [topicKey, topicVal] of Object.entries(learnData)) {
