@@ -43,6 +43,77 @@
   </url>
 
 
+  <url>
+    <loc>https://khelira.com/learn/devops/introduction-to-devops</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/cloud_computing/introduction-to-cloud-computing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/oops/introduction-to-oop</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/Data-Structures-and-Algorithms/introduction-to-dsa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/Programming-Concepts/algorithm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/ExpressJs/introduction-to-expressjs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/NodeJs/introduction-to-nodejs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/Nextjs/introduction-to-nextjs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-  <!-- Add more pages as needed -->
+  <url>
+    <loc>https://khelira.com/learn/ReactJs/introduction-to-reactjs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/Javascript/introduction-to-javascript</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/css/introduction-to-css</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/cloud_computing/characteristics-of-cloud-computing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/cloud_computing/types-of-cloud-deployment-models</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khelira.com/learn/cloud_computing/cloud-service-models</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
 </urlset>

@@ -243,6 +243,9 @@
   .learnWrapper {
     grid-template-columns: 1fr;
     gap: 0;
+    /* padding: 2px; */
+    margin: auto;
+    width: 97vw;
   }
   
   .sidebar {
@@ -285,8 +288,8 @@
 
   .content {
     padding-top: 5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 2px; */
+    /* padding-right: 2px; */
   }
 
   .allTopicsBtn {
