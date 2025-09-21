@@ -6,7 +6,7 @@ import { FaKeyboard, FaPuzzlePiece } from "react-icons/fa6";
 import { SiCoursera } from "react-icons/si";
 
 const items = [
-  { href: "https:typing.khelira.com", title: "Typing Test", img: "/project-1.jpg", icon: <FaKeyboard />, desc: "Challenge your fingers and sharpen your skills. A sleek, distraction-free typing test to measure speed, accuracy, and growth in real time.", tag: "Test your skills and Practice" },
+  { href: "https://typing.khelira.com", title: "Typing Test", img: "/project-1.jpg", icon: <FaKeyboard />, desc: "Challenge your fingers and sharpen your skills. A sleek, distraction-free typing test to measure speed, accuracy, and growth in real time.", tag: "Test your skills and Practice" },
   { href: "https://hangman.khelira.com", title: "Hangman", img: "/project-2.jpg", icon: <FaPuzzlePiece />, desc: "A modern twist on the classic word-guessing game. Fun, minimal, and addictive — test your vocabulary and strategy skills!", tag: "Play with fun" },
   { href: "https://learn.khelira.com", title: "Learn - Web Development and Programming", img: "/project-2.jpg", icon: <SiCoursera />, desc: "Master the art of coding from the ground up. Explore programming languages, frameworks, and tools to become a full-stack developer with hands-on lessons and real-world projects.", tag: "Simple Learn" }
 ];

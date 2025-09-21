@@ -13,7 +13,7 @@ export default function Footer(){
       </div>
         
         
-        <div className={styles.cols}>
+        <div className={styles.cols}>  
           <div className={styles.col}>
             <h4>Khelira</h4>
             <p>Minimal, modern, and memorable playground of web games.</p>

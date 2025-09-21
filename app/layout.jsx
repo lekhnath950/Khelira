@@ -21,7 +21,7 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-};
+}; 
 
 export default function RootLayout({ children }) {
   return (

@@ -9,12 +9,11 @@
     gap: 2rem;
 }
 
-.Footer_cols__FYdso {
+.Footer_cols__FYdso { 
     display: grid;
     grid-template-columns: repeat(4, 2fr);
     grid-gap: 3rem;
     gap: 3rem;
-
 }
 
 .Footer_col__WMzcr h4 {

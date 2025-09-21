@@ -71,6 +71,8 @@ export default async function LessonPage({ params }) {
           <span className={styles.currentCrumb}>{current.title}</span>
         </nav>
 
+        <div className={styles.titlepage}> 
+
         <h1>
           {topicData.title} — {current.title}
         </h1>
@@ -83,9 +85,11 @@ export default async function LessonPage({ params }) {
           </pre>
         )}
 
+        </div>
+
         {/* Navigation buttons */}
         <div className={styles.navButtons}>
-          <a
+          <Link
             href={
               currentIndex > 0
                 ? `/learn/${topic}/${slugify(levels[currentIndex - 1].title)}`
@@ -94,8 +98,8 @@ export default async function LessonPage({ params }) {
             className={currentIndex === 0 ? styles.disabled : ""}
           >
             ← Previous
-          </a>
-          <a
+          </Link>
+          <Link
             href={
               currentIndex < levels.length - 1
                 ? `/learn/${topic}/${slugify(levels[currentIndex + 1].title)}`
@@ -104,9 +108,9 @@ export default async function LessonPage({ params }) {
             className={currentIndex === levels.length - 1 ? styles.disabled : ""}
           >
             Next →
-          </a>
+          </Link>
         </div>
       </main>
     </div>
-  );
+  ); 
 }

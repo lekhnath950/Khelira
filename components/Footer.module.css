@@ -6,11 +6,10 @@
     gap: 2rem;
 }
 
-.cols {
+.cols { 
     display: grid;
     grid-template-columns: repeat(4, 2fr);
     gap: 3rem;
-
 }
 
 .col h4 {

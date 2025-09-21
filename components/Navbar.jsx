@@ -29,16 +29,12 @@ export default function Navbar(){
         </Link>
         <div className={styles.links} role="menubar">
           <Link className={`${styles.link} ${isActive("/") ? styles.active : ""}`} href="/">Home</Link>
-          <Link className={styles.link} href="/projects">Projects</Link>
-          {/* <Link className={styles.link} href="/gamerules">Game Rules</Link> */}
-          <Link className={styles.link} href="/about">About</Link>
-          <Link className={styles.link} href="/contact">Contact</Link>
-          <Link className={styles.link} href="/typingtest">Typing Test</Link>
-          <Link className={styles.link} href="/learn">Learn</Link>
+          <Link className={`${styles.link} ${isActive("/projects") ? styles.active : ""}`} href="/projects">Projects</Link>
+          <Link className={`${styles.link} ${isActive("/about") ? styles.active : ""}`} href="/about">About</Link>
+          <Link className={`${styles.link} ${isActive("/contact") ? styles.active : ""}`} href="/contact">Contact</Link>
+          <Link className={`${styles.link} ${isActive("/typingtest") ? styles.active : ""}`} href="/typingtest">Typing Test</Link>
+          <Link className={`${styles.link} ${isActive("/learn") ? styles.active : ""}`} href="/learn">Learn</Link>
         </div>
-        {/* <button className={`btn ${styles.menuBtn}`} aria-expanded={open} aria-controls="drawer" onClick={()=>setOpen(v=>!v)}>
-          <FaBars aria-hidden="true" /> Menu
-        </button> */}
 
         <button className={`btn ${styles.menuBtn}`} aria-expanded={open} aria-controls="drawer" onClick={()=>setOpen(v=>!v)}>
   {/* Conditionally render the icon based on the 'open' state */}
@@ -49,7 +45,6 @@ export default function Navbar(){
         <div id="drawer" className={styles.drawer} role="dialog" aria-modal="true">
           <Link href="/" onClick={()=>setOpen(false)}>Home</Link>
           <Link href="/projects" onClick={()=>setOpen(false)}>Projects</Link>
-          {/* <Link href="/gamerules" onClick={()=>setOpen(false)}>Game Rules</Link> */}
           <Link href="/about" onClick={()=>setOpen(false)}>About</Link>
           <Link href="/contact" onClick={()=>setOpen(false)}>Contact</Link>
           <Link href="/typingtest" onClick={()=>setOpen(false)}>Typing Test</Link>
